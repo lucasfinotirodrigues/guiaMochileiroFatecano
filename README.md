@@ -4,10 +4,9 @@ Professor Doutor: João Ricardo Favan
 
 Integrantes: Danielli, Jeferson, Lucas e Ricardo
 
-Scrum Master
-Lucas Finoti Rodrigues
-Product Owner
-Danielli Dos Santos Borges
+Scrum Master: Lucas Finoti Rodrigues
+
+Product Owner: Danielli Dos Santos Borges
 
 Título do projeto
 Guia do Mochileiro Fatecano (GMF)
