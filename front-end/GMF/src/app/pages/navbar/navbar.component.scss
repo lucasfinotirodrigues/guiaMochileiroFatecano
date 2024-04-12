@@ -1,0 +1,25 @@
+#nav-bar {
+  background-color: var(--color-secondary)!important;
+  padding: 8px 68px;
+}
+
+#navbarScroll {
+  justify-content: flex-end!important;
+}
+
+.navbar-nav {
+  --bs-scroll-height: 100px;
+  margin: 0!important;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+  color: var(--color-white);
+}
+
+.icon {
+  width: 20px
+}
+
+.nav-item, .logo {
+  cursor: pointer;
+}
