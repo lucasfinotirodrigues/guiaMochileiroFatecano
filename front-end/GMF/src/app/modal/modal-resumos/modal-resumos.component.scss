@@ -1,0 +1,22 @@
+.btn {
+  padding: 12px;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+
+  &:hover {
+    background-color: var(--color-tertiary);
+    transition: 0.3s;
+  }
+}
+
+.cards {
+  background-color: var(--color-secondary);
+  border-radius: 8px;
+  padding: 14px;
+
+  h3 {
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
