@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ModalEventosComponent } from './modal/modal-eventos/modal-eventos.component';
+import { ModalResumosComponent } from './modal/modal-resumos/modal-resumos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    ModalEventosComponent,
+    ModalResumosComponent
   ],
   imports: [
     BrowserModule,

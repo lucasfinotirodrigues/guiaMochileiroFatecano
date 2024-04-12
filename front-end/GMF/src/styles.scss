@@ -141,14 +141,32 @@ table {
 }
 
 :root {
-  --color-primary: #2AEF88;
+  --color-primary:   #2AEF88;
   --color-secondary: #21BC6B;
-  --color-tertiary: #148B4D;
-  --color-white: #FFFFFF;
-  --color-gray-100: #F1F0F5
-  --color-gray-200: #C6C5CE;
-  --color-gray-300: #7A7786;
-  --color-gray-400: #5F5C6B;
-  --color-gray-500: #4E4B59;
-  --color-gray-600: #33303E
+  --color-tertiary:  #148B4D;
+  --color-white:     #FFFFFF;
+  --color-black:     #000000;
+  --color-gray-100:  #F1F0F5;
+  --color-gray-200:  #C6C5CE;
+  --color-gray-300:  #7A7786;
+  --color-gray-400:  #5F5C6B;
+  --color-gray-500:  #4E4B59;
+  --color-gray-600:  #33303E;
+}
+
+
+// Estilos modais
+
+.content-modal {
+  padding: 30px 42px;
+
+  h3 {
+    font-size: 18;
+    font-weight: 600;
+    color: var(--color-black);
+  }
+
+  img {
+    cursor: pointer;
+  }
 }
