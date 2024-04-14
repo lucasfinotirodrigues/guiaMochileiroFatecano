@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ModalEventosComponent } from './modal/modal-eventos/modal-eventos.component';
 import { ModalResumosComponent } from './modal/modal-resumos/modal-resumos.component';
 import { ValoresComponent } from './pages/valores/valores.component';
+import { TermosComponent } from './pages/termos/termos.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ValoresComponent } from './pages/valores/valores.component';
     HomeComponent,
     ModalEventosComponent,
     ModalResumosComponent,
-    ValoresComponent
+    ValoresComponent,
+    TermosComponent
   ],
   imports: [
     BrowserModule,

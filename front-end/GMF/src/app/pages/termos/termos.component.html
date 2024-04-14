@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="content-termos">
+  <div class="d-flex flex-wrap align-items-center justify-content-between gap-4 mb-4">
+    <h2 class="titulo">4° Termo</h2>
+    <div class="d-flex gap-2">
+      <h2 class="titulo">Olá,</h2>
+      <h4 class="titulos">João Pedro</h4>
+    </div>
+  </div>
+  <div class="d-flex justify-content-end">
+    <button class="adicionar d-flex align-items-center justify-content-between mb-4  gap-4">
+      <img src="../../../assets/move.svg" alt="icone">
+      <span>Adicionar Termo</span>
+    </button>
+  </div>
+  <div class="group-cards d-flex flex-wrap justify-content-between mb-4">
+    <div class="card d-flex align-items-center justify-content-center"
+        *ngFor="let item of disciplinas"
+        [style.background-image]="getBackgroundImage(item.img)"
+        >
+      <h2 class="text-card">{{item.disciplina}}</h2>
+    </div>
+  </div>
+  <div class="group-cards d-flex flex-wrap justify-content-between mb-4">
+    <div class="card d-flex align-items-center justify-content-center"
+        *ngFor="let item of disciplinasDois"
+        [style.background-image]="getBackgroundImage(item.img)"
+        >
+      <h2 class="text-card">{{item.disciplina}}</h2>
+    </div>
+  </div>
+</div>
