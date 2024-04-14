@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="content-valores">
+  <div class="d-flex flex-wrap justify-content-between mb-4">
+    <h2 class="titulo">Valores e deveres do aluno </h2>
+    <div class="d-flex gap-2">
+      <h2 class="titulo">Olá,</h2>
+      <h4 class="titulos">João Pedro</h4>
+    </div>
+  </div>
+  <h3 class="subtitulo" *ngIf="conteudo">Os alunos da FATEC têm o compromisso de cultivar valores como respeito, responsabilidade, ética e colaboração em sua jornada acadêmica. Eles devem assumir a responsabilidade por seu próprio aprendizado, agindo com integridade e colaborando de forma ética com colegas e professores. Além disso, é essencial que demonstrem autonomia em suas escolhas, engajamento cívico e cuidado com o ambiente universitário, contribuindo assim para o desenvolvimento pessoal e coletivo dentro da comunidade acadêmica.
+  </h3>
+  <h3 class="subtitulo" *ngIf="!conteudo">Os alunos da FATEC têm o compromisso de cultivar valores como respeito, responsabilidade, ética e colaboração em sua jornada acadêmica...</h3>
+  <h5 *ngIf="conteudo" (click)=" mostrarConteudo()">Ler menos</h5>
+  <h5 *ngIf="!conteudo" (click)=" mostrarConteudo()">Ler mais</h5>
+  <div class="group-cards d-flex flex-wrap justify-content-between mb-4">
+    <div class="card d-flex align-items-center justify-content-center gap-3"
+         *ngFor="let item of valoresUm"
+         [style.background-color]="item.cor"
+        >
+      <h2 class="text-card">{{item.valores}}</h2>
+      <img [src]="item.img" alt="imagem">
+    </div>
+  </div>
+  <div class="group-cards d-flex flex-wrap justify-content-between">
+    <div class="card d-flex align-items-center justify-content-center gap-3"
+         *ngFor="let item of valoresDois"
+         [style.background-color]="item.cor"
+         >
+      <h2 class="text-card">{{item.valores}}</h2>
+      <img [src]="item.img" alt="imagem">
+    </div>
+  </div>
+</div>

@@ -7,6 +7,7 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ModalEventosComponent } from './modal/modal-eventos/modal-eventos.component';
 import { ModalResumosComponent } from './modal/modal-resumos/modal-resumos.component';
+import { ValoresComponent } from './pages/valores/valores.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ModalResumosComponent } from './modal/modal-resumos/modal-resumos.compo
     NavbarComponent,
     HomeComponent,
     ModalEventosComponent,
-    ModalResumosComponent
+    ModalResumosComponent,
+    ValoresComponent
   ],
   imports: [
     BrowserModule,
