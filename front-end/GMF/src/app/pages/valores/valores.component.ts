@@ -15,18 +15,18 @@ export class ValoresComponent {
   }
 
   valoresUm = [
-    { valores: 'Cliente Feliz', cor: '#FFFFDD', img: '../../../assets/clienteFeliz.svg' },
-    { valores: 'Ninguém cresce sozinho', cor: '#E2F4C5', img: '../../../assets/ninguemCresceSozinho.svg' },
-    { valores: 'Desenvolver a nossa gente', cor: '#C5EBAA', img: '../../../assets/desenvolverNossa.svg' },
-    { valores: 'Trabalhar duro como forma de prosperar', cor: '#A5DD9B', img: '../../../assets/trabalharDuro.svg' },
-    { valores: 'Honrar compromissos', cor: '#AFC8AD', img: '../../../assets/honrarCompromissos.svg' },
+    { valores: 'Cliente Feliz', cor: '#FFFFDD', img: 'clienteFeliz' },
+    { valores: 'Ninguém cresce sozinho', cor: '#E2F4C5', img: 'ninguemCresceSozinho' },
+    { valores: 'Desenvolver a nossa gente', cor: '#C5EBAA', img: 'desenvolverNossa' },
+    { valores: 'Trabalhar duro como forma de prosperar', cor: '#A5DD9B', img: 'trabalharDuro' },
+    { valores: 'Honrar compromissos', cor: '#AFC8AD', img: 'honrarCompromissos' },
   ];
 
   valoresDois = [
-    { valores: 'Evitar Dívidas', cor: '#AFC8AD', img: '../../../assets/evitarDividas.svg' },
-    { valores: 'Três virtudedades', cor: '#A5DD9B', img: '../../../assets/tresVirtudidades.svg' },
-    { valores: 'Espírito inovador', cor: '#E2F4C5', img: '../../../assets/espiritoInovador.svg' },
-    { valores: 'Responsabilidade socioambiental', cor: '#FFFFDD', img: '../../../assets/responsabilidade.svg' },
-    { valores: 'Felicidade em compartilhar', cor: '#C5EBAA', img: '../../../assets/felicidadeCompartilhar.svg' },
+    { valores: 'Evitar Dívidas', cor: '#AFC8AD', img: 'evitarDividas' },
+    { valores: 'Três virtudedades', cor: '#A5DD9B', img: 'tresVirtudidades' },
+    { valores: 'Espírito inovador', cor: '#E2F4C5', img: 'espiritoInovador' },
+    { valores: 'Responsabilidade socioambiental', cor: '#FFFFDD', img: 'responsabilidade' },
+    { valores: 'Felicidade em compartilhar', cor: '#C5EBAA', img: 'felicidadeCompartilhar' },
   ];
 }
