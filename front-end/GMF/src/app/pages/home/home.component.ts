@@ -15,6 +15,18 @@ export class HomeComponent {
 
   }
 
+  cicloUm = [
+    { termo: '1° Termo', cor: '#E2F4C5' },
+    { termo: '2° Termo', cor: '#EEE7DA' },
+    { termo: '3° Termo', cor: '#A5DD9B' },
+  ]
+
+  cicloDois = [
+    { termo: '4° Termo', cor: '#C5EBAA' },
+    { termo: '5° Termo', cor: '#FFFFDD' },
+    { termo: '6° Termo', cor: '#AFC8AD' }
+  ]
+
   openModalEventos():void {
     this.modalService.open(ModalEventosComponent, {size: 'md', backdrop: 'static'})
   }

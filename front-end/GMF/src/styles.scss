@@ -143,6 +143,7 @@ table {
 :root {
   --color-primary:   #2AEF88;
   --color-secondary: #21BC6B;
+  --color-secondary-hover: #1d9c5a;
   --color-tertiary:  #148B4D;
   --color-white:     #FFFFFF;
   --color-black:     #000000;
@@ -151,7 +152,7 @@ table {
   --color-gray-300:  #7A7786;
   --color-gray-400:  #5F5C6B;
   --color-gray-500:  #4E4B59;
-  --color-gray-600:  #33303E;
+  --color-gray-600:  #3E3E3E;
 }
 
 
@@ -170,3 +171,24 @@ table {
     cursor: pointer;
   }
 }
+
+// Estilo das telas com formulários
+
+.background {
+  width: 600px;
+}
+
+// Estilos do título e sub-título
+
+h2.titulo {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-gray-600);
+}
+
+h3.subtitulo {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-300);
+}
+
