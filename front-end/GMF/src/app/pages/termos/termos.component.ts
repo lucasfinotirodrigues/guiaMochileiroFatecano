@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalResumosComponent } from 'src/app/modal/modal-resumos/modal-resumos.component';
 
 @Component({
   selector: 'app-termos',
@@ -8,7 +10,8 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 })
 export class TermosComponent {
   constructor(
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private modalService: NgbModal
   ) {}
 
   disciplinas = [
@@ -25,5 +28,9 @@ export class TermosComponent {
 
   getBackgroundImage(imagePath: string): SafeStyle {
     return this.sanitizer.bypassSecurityTrustStyle(`url('${imagePath}')`);
+  }
+
+  openModal(): void{
+    this.modalService.open(ModalResumosComponent, {size: 'md', backdrop: 'static'})
   }
 }

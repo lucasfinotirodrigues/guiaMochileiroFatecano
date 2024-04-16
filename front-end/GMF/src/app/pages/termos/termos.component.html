@@ -17,6 +17,7 @@
     <div class="card d-flex align-items-center justify-content-center"
         *ngFor="let item of disciplinas"
         [style.background-image]="getBackgroundImage(item.img)"
+        (click)="openModal()"
         >
       <h2 class="text-card">{{item.disciplina}}</h2>
     </div>
