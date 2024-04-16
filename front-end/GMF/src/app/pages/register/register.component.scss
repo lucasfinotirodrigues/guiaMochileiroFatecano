@@ -1,0 +1,129 @@
+.content-login {
+  height: 100vh;
+  justify-content: space-evenly;
+
+  .img-left {
+    width: 600px;
+  }
+
+  .rigth {
+    padding: 80px;
+
+    form {
+      width: 280px;
+
+      .green {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--color-secondary);
+        cursor: pointer;
+      }
+
+      .gray {
+        font-size: 16px;
+        color: #858e97;
+        font-weight: 400;
+      }
+
+      .form-group,
+      .form-groups {
+        max-width: 400px;
+        width: 100%;
+
+        label {
+          color: #858E97
+        }
+
+        input {
+          font-size: 16px;
+          padding: 8px;
+          height: 40px;
+          border: 1px solid #CDD4DA;
+          border-radius: 8px;
+        }
+      }
+
+      .form-groups {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: relative;
+      }
+
+      button {
+        border: none;
+        border-radius: 8px;
+        color: var(--color-white);
+        font-size: 16px;
+        max-width: 400px;
+        height: 40px;
+        width: 100%;
+        background-color: var(--color-secondary);
+
+        &:hover {
+          background-color: var(--color-secondary-hover);
+          transition: .3s
+        }
+      }
+    }
+  }
+}
+
+.image {
+  position: absolute;
+  width: 24px;
+  right: 8px;
+  bottom: 10px;
+  cursor: pointer;
+}
+
+
+h2 {
+  color: #263238;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.icon {
+  width: 24px;
+  cursor: pointer;
+  position: relative;
+  left: 316px;
+  top: 40px;
+}
+
+
+@media screen and (max-width: 992px) {
+  .content-login {
+    justify-content: center;
+
+    .img-left {
+      width: 400px;
+    }
+
+    .rigth {
+      padding: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content-login {
+    .img-left {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .content-login {
+    .rigth{
+      form{
+        .green, .gray {
+          font-size: 13px
+        }
+      }
+    }
+  }
+}

@@ -10,6 +10,7 @@ import { ModalResumosComponent } from './modal/modal-resumos/modal-resumos.compo
 import { ValoresComponent } from './pages/valores/valores.component';
 import { TermosComponent } from './pages/termos/termos.component';
 import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoginComponent } from './pages/login/login.component';
     ModalResumosComponent,
     ValoresComponent,
     TermosComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

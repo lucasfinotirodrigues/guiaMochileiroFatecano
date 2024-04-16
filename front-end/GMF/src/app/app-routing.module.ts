@@ -5,13 +5,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { ValoresComponent } from './pages/valores/valores.component';
 import { TermosComponent } from './pages/termos/termos.component';
 import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent},
-  { path: 'home', component: HomeComponent},
-  { path: 'navbar', component: NavbarComponent},
-  { path: 'valores', component: ValoresComponent},
-  { path: 'termos', component: TermosComponent}
+  { path: '', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'navbar', component: NavbarComponent },
+  { path: 'valores', component: ValoresComponent },
+  { path: 'termos', component: TermosComponent },
+  { path: 'register', component: RegisterComponent }
 ];
 
 @NgModule({
