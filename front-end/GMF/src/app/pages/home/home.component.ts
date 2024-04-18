@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgbDropdownConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalAdicionarTurmaComponent } from 'src/app/modal/modal-adicionar-turma/modal-adicionar-turma.component';
 import { ModalEventosComponent } from 'src/app/modal/modal-eventos/modal-eventos.component';
 import { ModalResumosComponent } from 'src/app/modal/modal-resumos/modal-resumos.component';
 
@@ -13,7 +14,7 @@ export class HomeComponent {
   constructor(
     private modalService: NgbModal,
     private config: NgbDropdownConfig
-  ) {		
+  ) {
   config.placement = 'top-start';
   config.autoClose = false;
   }
@@ -36,5 +37,9 @@ export class HomeComponent {
 
   openModalResumo():void {
     this.modalService.open(ModalResumosComponent, {size: 'md', backdrop: 'static'})
+  }
+
+  openModalTurma():void {
+    this.modalService.open(ModalAdicionarTurmaComponent, {size: 'md', backdrop: 'static'})
   }
 }

@@ -5,7 +5,7 @@
       <h2 class="titulo">Termos</h2>
       <h3 class="subtitulo">Qual termo gostaria de acessar hoje?</h3>
     </div>
-    <button class="adicionar d-flex align-items-center justify-content-between gap-4">
+    <button class="adicionar d-flex align-items-center justify-content-between gap-4" (click)="openModalTurma()">
       <img src="../../../assets/move.svg" alt="icone">
       <span>Adicionar Turma</span>
     </button>
@@ -15,20 +15,11 @@
         routerLink="/termos"
         *ngFor="let item of cicloUm"
         [style.background-color]="item.cor"
-        > 
+        >
       <h2 class="text-card">{{item.termo}}</h2>
     </div>
   </div>
-  <div class="group-cards d-flex flex-wrap justify-content-between">
-    <div class="card d-flex align-items-center justify-content-center"
-         *ngFor="let item of cicloDois"
-         [style.background-color]="item.cor"
-         >
-      <h2 class="text-card">{{item.termo}}</h2>
-    </div>
-  </div>
-          
-  <div ngbDropdown>
+  <div ngbDropdown> 
     <img class="cursor" src="../../../assets/more-vertical.svg" alt="icon" ngbDropdownToggle>
     <div ngbDropdownMenu aria-labelledby="dropdownConfig">
       <button ngbDropdownItem class="d-flex align-items-center gap-3">
@@ -40,5 +31,5 @@
         Excluir
       </button>
     </div>
-  </div> 
+  </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalAdicionarTermoComponent } from 'src/app/modal/modal-adicionar-termo/modal-adicionar-termo.component';
 import { ModalResumosComponent } from 'src/app/modal/modal-resumos/modal-resumos.component';
 
 @Component({
@@ -32,5 +33,9 @@ export class TermosComponent {
 
   openModal(): void{
     this.modalService.open(ModalResumosComponent, {size: 'md', backdrop: 'static'})
+  }
+
+  openModalDisciplinas():void {
+    this.modalService.open(ModalAdicionarTermoComponent, {size: 'md', backdrop: 'static'})
   }
 }

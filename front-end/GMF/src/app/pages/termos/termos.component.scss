@@ -4,7 +4,7 @@
 
 .card {
   width: 308px;
-  height: 138px;
+  height: 128px;
   cursor: pointer;
 
   .text-card {
@@ -21,7 +21,8 @@
   border: none;
   background-color: var(--color-secondary);
   border-radius: 5px;
-  height: 68px;
+  height: 52px;
+  padding: 24px;
 
   &:hover {
     background-color: var(--color-secondary-hover);

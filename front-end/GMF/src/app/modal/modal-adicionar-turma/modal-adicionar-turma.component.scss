@@ -1,0 +1,36 @@
+.content-modal {
+  padding: 40px;
+
+  .form-group {
+    max-width: 480px;
+    width: 100%;
+
+    label {
+      color: #858E97
+    }
+
+    input {
+      font-size: 14px;
+      padding: 8px;
+      height: 40px;
+      border: 1px solid #CDD4DA;
+      border-radius: 8px;
+    }
+  }
+}
+
+.turma {
+  border: none;
+  border-radius: 8px;
+  color: var(--color-white);
+  font-size: 16px;
+  max-width: 480px;
+  height: 40px;
+  width: 100%;
+  background-color: var(--color-secondary);
+
+  &:hover {
+    background-color: var(--color-secondary-hover);
+    transition: .3s
+  }
+}
