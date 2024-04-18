@@ -17,6 +17,14 @@
   }
 }
 
+.cursor {
+  cursor: pointer;
+}
+
+.dropdown-item {
+  color: var(--color-gray-300)
+}
+
 .card {
   width: 260px;
   height: 192px;

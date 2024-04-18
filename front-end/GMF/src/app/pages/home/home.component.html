@@ -15,7 +15,7 @@
         routerLink="/termos"
         *ngFor="let item of cicloUm"
         [style.background-color]="item.cor"
-        >
+        > 
       <h2 class="text-card">{{item.termo}}</h2>
     </div>
   </div>
@@ -27,4 +27,18 @@
       <h2 class="text-card">{{item.termo}}</h2>
     </div>
   </div>
+          
+  <div ngbDropdown>
+    <img class="cursor" src="../../../assets/more-vertical.svg" alt="icon" ngbDropdownToggle>
+    <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+      <button ngbDropdownItem class="d-flex align-items-center gap-3">
+        <img class="icon-card" src="../../../assets/edit.svg" alt="icon">
+        Editar
+      </button>
+      <button ngbDropdownItem class="d-flex align-items-center gap-3">
+        <img class="icon-card" src="../../../assets/trash.svg" alt="icon">
+        Excluir
+      </button>
+    </div>
+  </div> 
 </div>

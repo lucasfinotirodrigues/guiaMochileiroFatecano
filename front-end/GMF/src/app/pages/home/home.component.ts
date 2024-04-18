@@ -1,18 +1,21 @@
 import { Component } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalEventosComponent } from 'src/app/modal/modal-eventos/modal-eventos.component';
 import { ModalResumosComponent } from 'src/app/modal/modal-resumos/modal-resumos.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [NgbDropdownConfig],
 })
 export class HomeComponent {
   constructor(
-    private modalService: NgbModal
-  ) {
-
+    private modalService: NgbModal,
+    private config: NgbDropdownConfig
+  ) {		
+  config.placement = 'top-start';
+  config.autoClose = false;
   }
 
   cicloUm = [
