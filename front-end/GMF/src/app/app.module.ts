@@ -11,6 +11,10 @@ import { ValoresComponent } from './pages/valores/valores.component';
 import { TermosComponent } from './pages/termos/termos.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { ModalAdicionarTurmaComponent } from './modal/modal-adicionar-turma/modal-adicionar-turma.component';
+import { ModalAdicionarTermoComponent } from './modal/modal-adicionar-termo/modal-adicionar-termo.component';
+import { ModalExcluirTermoComponent } from './modal/modal-excluir-termo/modal-excluir-termo.component';
+import { ModalExcluirTurmaComponent } from './modal/modal-excluir-turma/modal-excluir-turma.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { RegisterComponent } from './pages/register/register.component';
     ValoresComponent,
     TermosComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ModalAdicionarTurmaComponent,
+    ModalAdicionarTermoComponent,
+    ModalExcluirTermoComponent,
+    ModalExcluirTurmaComponent
   ],
   imports: [
     BrowserModule,
