@@ -25,7 +25,25 @@
 }
 
 .dropdown-item {
-  color: var(--color-gray-300)
+  color: var(--color-gray-300);
+
+  &:hover {
+    background-color: #21bc6bad;
+  }
+}
+
+.dropdown-menu {
+  padding: 0;
+}
+
+.group-cards {
+  position: relative;
+}
+
+.more {
+  position: absolute;
+  right: 10px;
+  top: 16px;
 }
 
 .card {

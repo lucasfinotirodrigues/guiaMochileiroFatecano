@@ -10,26 +10,25 @@
       <span>Adicionar Turma</span>
     </button>
   </div>
-  <div class="group-cards d-flex flex-wrap justify-content-between mb-4">
+  <div class="group-cards d-flex flex-wrap justify-content-between gap-4 mb-4">
     <div class="card d-flex align-items-center justify-content-center"
-        routerLink="/termos"
         *ngFor="let item of cicloUm"
         [style.background-color]="item.cor"
         >
+        <div ngbDropdown class="more">
+          <img class="cursor" src="../../../assets/more-vertical.svg" alt="icon" ngbDropdownToggle>
+          <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+            <button ngbDropdownItem class="d-flex align-items-center gap-3" (click)="openModalTurma()" >
+              <img class="icon-card" src="../../../assets/edit.svg" alt="icon">
+              Editar
+            </button>
+            <button ngbDropdownItem class="d-flex align-items-center gap-3" (click)="openModalExcluirTurma()">
+              <img class="icon-card" src="../../../assets/trash.svg" alt="icon">
+              Excluir
+            </button>
+          </div>
+        </div>
       <h2 class="text-card">{{item.termo}}</h2>
-    </div>
-  </div>
-  <div ngbDropdown> 
-    <img class="cursor" src="../../../assets/more-vertical.svg" alt="icon" ngbDropdownToggle>
-    <div ngbDropdownMenu aria-labelledby="dropdownConfig">
-      <button ngbDropdownItem class="d-flex align-items-center gap-3">
-        <img class="icon-card" src="../../../assets/edit.svg" alt="icon">
-        Editar
-      </button>
-      <button ngbDropdownItem class="d-flex align-items-center gap-3">
-        <img class="icon-card" src="../../../assets/trash.svg" alt="icon">
-        Excluir
-      </button>
     </div>
   </div>
 </div>

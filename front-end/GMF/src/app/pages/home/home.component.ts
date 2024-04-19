@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgbDropdownConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalAdicionarTurmaComponent } from 'src/app/modal/modal-adicionar-turma/modal-adicionar-turma.component';
 import { ModalEventosComponent } from 'src/app/modal/modal-eventos/modal-eventos.component';
+import { ModalExcluirTurmaComponent } from 'src/app/modal/modal-excluir-turma/modal-excluir-turma.component';
 import { ModalResumosComponent } from 'src/app/modal/modal-resumos/modal-resumos.component';
 
 @Component({
@@ -41,5 +42,8 @@ export class HomeComponent {
 
   openModalTurma():void {
     this.modalService.open(ModalAdicionarTurmaComponent, {size: 'md', backdrop: 'static'})
+  }
+  openModalExcluirTurma():void {
+    this.modalService.open(ModalExcluirTurmaComponent, {size: 'md', backdrop: 'static'})
   }
 }
