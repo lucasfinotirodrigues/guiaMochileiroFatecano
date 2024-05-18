@@ -10,7 +10,7 @@ import LoginComponent from './login/login.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
     title: 'home.title',
   },
@@ -32,7 +32,7 @@ const routes: Routes = [
     loadChildren: () => import('./account/account.route'),
   },
   {
-    path: 'login',
+    path: '',
     component: LoginComponent,
     title: 'login.title',
   },

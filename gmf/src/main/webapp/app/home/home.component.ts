@@ -30,7 +30,7 @@ export default class HomeComponent implements OnInit, OnDestroy {
   }
 
   login(): void {
-    this.router.navigate(['/login']);
+    this.router.navigate(['']);
   }
 
   ngOnDestroy(): void {
