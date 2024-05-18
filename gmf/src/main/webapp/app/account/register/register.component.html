@@ -1,220 +1,180 @@
-<div>
-  <div class="d-flex justify-content-center">
-    <div class="col-md-8">
-      <h1 data-cy="registerTitle" jhiTranslate="register.title">Registration</h1>
+<div class="content-login d-flex align-items-center">
+  <img class="img-left" src="../../../content/images/background.svg" alt="icone">
+  <div class="rigth">
+    @if (!success()) {
+    <form class="d-flex align-items-center flex-column gap-3" name="form" role="form" (ngSubmit)="register()" [formGroup]="registerForm">
+      <h2>Cadastre-se</h2>
+      <div class="form-group d-flex flex-column gap-2">
+        <label for="login" >Nome</label>
+        <input   
+          type="text"
+          class="form-control"
+          id="login"
+          name="login"
+          placeholder="Insira seu primeiro nome"
+          formControlName="login"
+          data-cy="username"
+          #login>
+          @if (registerForm.get('login')!.invalid && (registerForm.get('login')!.dirty || registerForm.get('login')!.touched)) {
+            <div>
+              @if (registerForm.get('login')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="register.messages.validate.login.required"
+                  >Your username is required.</small
+                >
+              }
 
-      @if (success()) {
-        <div class="alert alert-success" jhiTranslate="register.messages.success">
-          <strong>Registration saved!</strong> Please check your email for confirmation.
-        </div>
-      }
+              @if (registerForm.get('login')?.errors?.minlength) {
+                <small class="form-text text-danger" jhiTranslate="register.messages.validate.login.minlength"
+                  >Your username is required to be at least 1 character.</small
+                >
+              }
 
-      @if (error()) {
-        <div class="alert alert-danger" jhiTranslate="register.messages.error.fail">
-          <strong>Registration failed!</strong> Please try again later.
-        </div>
-      }
+              @if (registerForm.get('login')?.errors?.maxlength) {
+                <small class="form-text text-danger" jhiTranslate="register.messages.validate.login.maxlength"
+                  >Your username cannot be longer than 50 characters.</small
+                >
+              }
 
-      @if (errorUserExists()) {
-        <div class="alert alert-danger" jhiTranslate="register.messages.error.userexists">
-          <strong>Login name already registered!</strong> Please choose another one.
-        </div>
-      }
-
-      @if (errorEmailExists()) {
-        <div class="alert alert-danger" jhiTranslate="register.messages.error.emailexists">
-          <strong>Email is already in use!</strong> Please choose another one.
-        </div>
-      }
-
-      @if (doNotMatch()) {
-        <div class="alert alert-danger" jhiTranslate="global.messages.error.dontmatch">The password and its confirmation do not match!</div>
-      }
-    </div>
-  </div>
-
-  <div class="d-flex justify-content-center">
-    <div class="col-md-8">
-      @if (!success()) {
-        <form name="form" role="form" (ngSubmit)="register()" [formGroup]="registerForm">
-          <div class="mb-3">
-            <label class="form-label" for="login" jhiTranslate="global.form.username.label">Username</label>
-            <input
-              type="text"
-              class="form-control"
-              id="login"
-              name="login"
-              placeholder="{{ 'global.form.username.placeholder' | translate }}"
-              formControlName="login"
-              data-cy="username"
-              #login
-            />
-
-            @if (registerForm.get('login')!.invalid && (registerForm.get('login')!.dirty || registerForm.get('login')!.touched)) {
-              <div>
-                @if (registerForm.get('login')?.errors?.required) {
-                  <small class="form-text text-danger" jhiTranslate="register.messages.validate.login.required"
-                    >Your username is required.</small
-                  >
-                }
-
-                @if (registerForm.get('login')?.errors?.minlength) {
-                  <small class="form-text text-danger" jhiTranslate="register.messages.validate.login.minlength"
-                    >Your username is required to be at least 1 character.</small
-                  >
-                }
-
-                @if (registerForm.get('login')?.errors?.maxlength) {
-                  <small class="form-text text-danger" jhiTranslate="register.messages.validate.login.maxlength"
-                    >Your username cannot be longer than 50 characters.</small
-                  >
-                }
-
-                @if (registerForm.get('login')?.errors?.pattern) {
-                  <small class="form-text text-danger" jhiTranslate="register.messages.validate.login.pattern"
-                    >Your username is invalid.</small
-                  >
-                }
-              </div>
-            }
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label" for="email" jhiTranslate="global.form.email.label">Email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              name="email"
-              placeholder="{{ 'global.form.email.placeholder' | translate }}"
-              formControlName="email"
-              data-cy="email"
-            />
-
-            @if (registerForm.get('email')!.invalid && (registerForm.get('email')!.dirty || registerForm.get('email')!.touched)) {
-              <div>
-                @if (registerForm.get('email')?.errors?.required) {
-                  <small class="form-text text-danger" jhiTranslate="global.messages.validate.email.required"
-                    >Your email is required.</small
-                  >
-                }
-
-                @if (registerForm.get('email')?.errors?.invalid) {
-                  <small class="form-text text-danger" jhiTranslate="global.messages.validate.email.invalid">Your email is invalid.</small>
-                }
-
-                @if (registerForm.get('email')?.errors?.minlength) {
-                  <small class="form-text text-danger" jhiTranslate="global.messages.validate.email.minlength"
-                    >Your email is required to be at least 5 characters.</small
-                  >
-                }
-
-                @if (registerForm.get('email')?.errors?.maxlength) {
-                  <small class="form-text text-danger" jhiTranslate="global.messages.validate.email.maxlength"
-                    >Your email cannot be longer than 50 characters.</small
-                  >
-                }
-              </div>
-            }
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label" for="password" jhiTranslate="global.form.newpassword.label">New password</label>
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              name="password"
-              placeholder="{{ 'global.form.newpassword.placeholder' | translate }}"
-              formControlName="password"
-              data-cy="firstPassword"
-            />
-
-            @if (registerForm.get('password')!.invalid && (registerForm.get('password')!.dirty || registerForm.get('password')!.touched)) {
-              <div>
-                @if (registerForm.get('password')?.errors?.required) {
-                  <small class="form-text text-danger" jhiTranslate="global.messages.validate.newpassword.required"
-                    >Your password is required.</small
-                  >
-                }
-
-                @if (registerForm.get('password')?.errors?.minlength) {
-                  <small class="form-text text-danger" jhiTranslate="global.messages.validate.newpassword.minlength"
-                    >Your password is required to be at least 4 characters.</small
-                  >
-                }
-
-                @if (registerForm.get('password')?.errors?.maxlength) {
-                  <small class="form-text text-danger" jhiTranslate="global.messages.validate.newpassword.maxlength"
-                    >Your password cannot be longer than 50 characters.</small
-                  >
-                }
-              </div>
-            }
-
-            <jhi-password-strength-bar [passwordToCheck]="registerForm.get('password')!.value"></jhi-password-strength-bar>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label" for="confirmPassword" jhiTranslate="global.form.confirmpassword.label"
-              >New password confirmation</label
-            >
-            <input
-              type="password"
-              class="form-control"
-              id="confirmPassword"
-              name="confirmPassword"
-              placeholder="{{ 'global.form.confirmpassword.placeholder' | translate }}"
-              formControlName="confirmPassword"
-              data-cy="secondPassword"
-            />
-
-            @if (
-              registerForm.get('confirmPassword')!.invalid &&
-              (registerForm.get('confirmPassword')!.dirty || registerForm.get('confirmPassword')!.touched)
-            ) {
-              <div>
-                @if (registerForm.get('confirmPassword')?.errors?.required) {
-                  <small class="form-text text-danger" jhiTranslate="global.messages.validate.confirmpassword.required"
-                    >Your confirmation password is required.</small
-                  >
-                }
-
-                @if (registerForm.get('confirmPassword')?.errors?.minlength) {
-                  <small class="form-text text-danger" jhiTranslate="global.messages.validate.confirmpassword.minlength"
-                    >Your confirmation password is required to be at least 4 characters.</small
-                  >
-                }
-
-                @if (registerForm.get('confirmPassword')?.errors?.maxlength) {
-                  <small class="form-text text-danger" jhiTranslate="global.messages.validate.confirmpassword.maxlength"
-                    >Your confirmation password cannot be longer than 50 characters.</small
-                  >
-                }
-              </div>
-            }
-          </div>
-
-          <button
-            type="submit"
-            [disabled]="registerForm.invalid"
-            class="btn btn-primary"
-            data-cy="submit"
-            jhiTranslate="register.form.button"
-          >
-            Register
-          </button>
-        </form>
-      }
-
-      <div class="mt-3 alert alert-warning">
-        <span jhiTranslate="global.messages.info.authenticated.prefix">If you want to </span>
-        <a class="alert-link" routerLink="/login" jhiTranslate="global.messages.info.authenticated.link">sign in</a
-        ><span jhiTranslate="global.messages.info.authenticated.suffix"
-          >, you can try the default accounts:<br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;) <br />- User
-          (login=&quot;user&quot; and password=&quot;user&quot;).</span
-        >
+              @if (registerForm.get('login')?.errors?.pattern) {
+                <small class="form-text text-danger" jhiTranslate="register.messages.validate.login.pattern"
+                  >Your username is invalid.</small
+                >
+              }
+            </div>
+          }
       </div>
-    </div>
+      <div class="form-group d-flex flex-column gap-2">
+        <label for="email">E-mail</label>
+        <input 
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Insira seu e-mail"
+          formControlName="email"
+          data-cy="email"
+          >
+          @if (registerForm.get('email')!.invalid && (registerForm.get('email')!.dirty || registerForm.get('email')!.touched)) {
+            <div>
+              @if (registerForm.get('email')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="global.messages.validate.email.required"
+                  >Your email is required.</small
+                >
+              }
+
+              @if (registerForm.get('email')?.errors?.invalid) {
+                <small class="form-text text-danger" jhiTranslate="global.messages.validate.email.invalid">Your email is invalid.</small>
+              }
+
+              @if (registerForm.get('email')?.errors?.minlength) {
+                <small class="form-text text-danger" jhiTranslate="global.messages.validate.email.minlength"
+                  >Your email is required to be at least 5 characters.</small
+                >
+              }
+
+              @if (registerForm.get('email')?.errors?.maxlength) {
+                <small class="form-text text-danger" jhiTranslate="global.messages.validate.email.maxlength"
+                  >Your email cannot be longer than 50 characters.</small
+                >
+              }
+            </div>
+          }
+      </div>
+      <div class="form-groups d-flex flex-column gap-2">
+        <label for="password">Senha</label>
+        <img class="image" [src]="mostrarSenha ?  '../../../content/images/unlock.svg' : '../../../content/images/Lock.svg' " (click)="visibilidadeSenha()"  alt="">
+        <input 
+          class="pass" 
+          [type]="mostrarSenha ? 'text' : 'password'"
+          id="password"
+          name="password"
+          placeholder="Insira sua senha"
+          formControlName="password"
+          data-cy="firstPassword"
+          >
+
+          @if (registerForm.get('password')!.invalid && (registerForm.get('password')!.dirty || registerForm.get('password')!.touched)) {
+            <div>
+              @if (registerForm.get('password')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="global.messages.validate.newpassword.required"
+                  >Your password is required.</small
+                >
+              }
+
+              @if (registerForm.get('password')?.errors?.minlength) {
+                <small class="form-text text-danger" jhiTranslate="global.messages.validate.newpassword.minlength"
+                  >Your password is required to be at least 4 characters.</small
+                >
+              }
+
+              @if (registerForm.get('password')?.errors?.maxlength) {
+                <small class="form-text text-danger" jhiTranslate="global.messages.validate.newpassword.maxlength"
+                  >Your password cannot be longer than 50 characters.</small
+                >
+              }
+            </div>
+          }
+          <jhi-password-strength-bar [passwordToCheck]="registerForm.get('password')!.value"></jhi-password-strength-bar>
+         
+      </div>
+      <div class="form-groups d-flex flex-column gap-2">
+        <label for="confirmPassword">Confirmar senha</label>
+        <img 
+          class="image" 
+          [src]="mostrarConfirmSenha ?  
+          '../../../content/images/unlock.svg' : '../../../content/images/Lock.svg' " 
+          (click)="visibilidadeConfirmSenha()"  
+          alt="icone"
+          >
+        <input 
+          class="pass" 
+          [type]="mostrarConfirmSenha ? 'text' : 'password'"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Insira novamente sua senha"
+          formControlName="confirmPassword"
+          data-cy="secondPassword"
+          >
+
+          @if (
+            registerForm.get('confirmPassword')!.invalid &&
+            (registerForm.get('confirmPassword')!.dirty || registerForm.get('confirmPassword')!.touched)
+          ) {
+            <div>
+              @if (registerForm.get('confirmPassword')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="global.messages.validate.confirmpassword.required"
+                  >Your confirmation password is required.</small
+                >
+              }
+
+              @if (registerForm.get('confirmPassword')?.errors?.minlength) {
+                <small class="form-text text-danger" jhiTranslate="global.messages.validate.confirmpassword.minlength"
+                  >Your confirmation password is required to be at least 4 characters.</small
+                >
+              }
+
+              @if (registerForm.get('confirmPassword')?.errors?.maxlength) {
+                <small class="form-text text-danger" jhiTranslate="global.messages.validate.confirmpassword.maxlength"
+                  >Your confirmation password cannot be longer than 50 characters.</small
+                >
+              }
+            </div>
+          }
+      </div>
+      <button
+        class="submit"
+        type="submit"
+        [disabled]="registerForm.invalid" 
+        routerLink="/"
+        >
+        Cadastrar
+      </button> 
+      <div class="d-flex gap-2">
+        <span class="gray">Você já possui conta?</span>
+        <span routerLink="/" class="green">Entrar</span>
+      </div>
+    </form>
+    }
   </div>
 </div>
+

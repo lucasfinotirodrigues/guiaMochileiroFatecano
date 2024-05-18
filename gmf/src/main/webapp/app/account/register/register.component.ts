@@ -14,6 +14,7 @@ import { RegisterService } from './register.service';
   selector: 'jhi-register',
   imports: [SharedModule, RouterModule, FormsModule, ReactiveFormsModule, PasswordStrengthBarComponent],
   templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
 export default class RegisterComponent implements AfterViewInit {
   @ViewChild('login', { static: false })
@@ -24,6 +25,8 @@ export default class RegisterComponent implements AfterViewInit {
   errorEmailExists = signal(false);
   errorUserExists = signal(false);
   success = signal(false);
+  mostrarSenha = false;
+  mostrarConfirmSenha = false;
 
   registerForm = new FormGroup({
     login: new FormControl('', {
@@ -56,6 +59,14 @@ export default class RegisterComponent implements AfterViewInit {
     if (this.login) {
       this.login.nativeElement.focus();
     }
+  }
+
+  visibilidadeSenha(): void{
+    this.mostrarSenha = !this.mostrarSenha;
+  }
+
+  visibilidadeConfirmSenha(): void {
+    this.mostrarConfirmSenha = !this.mostrarConfirmSenha;
   }
 
   register(): void {
