@@ -11,10 +11,13 @@ import { AccountService } from 'app/core/auth/account.service';
   selector: 'jhi-login',
   imports: [SharedModule, FormsModule, ReactiveFormsModule, RouterModule],
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 export default class LoginComponent implements OnInit, AfterViewInit {
   @ViewChild('username', { static: false })
   username!: ElementRef;
+
+  mostrarSenha = false
 
   authenticationError = signal(false);
 
@@ -41,13 +44,17 @@ export default class LoginComponent implements OnInit, AfterViewInit {
     this.username.nativeElement.focus();
   }
 
+  visibilidadeSenha(){
+    this.mostrarSenha = !this.mostrarSenha
+  }
+
   login(): void {
     this.loginService.login(this.loginForm.getRawValue()).subscribe({
       next: () => {
         this.authenticationError.set(false);
         if (!this.router.getCurrentNavigation()) {
           // There were no routing during login (eg from navigationToStoredUrl)
-          this.router.navigate(['']);
+          this.router.navigate(['home']);
         }
       },
       error: () => this.authenticationError.set(true),
