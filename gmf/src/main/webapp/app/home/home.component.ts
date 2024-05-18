@@ -23,6 +23,7 @@ export default class HomeComponent implements OnInit, OnDestroy {
   private router = inject(Router);
 
   ngOnInit(): void {
+    this.router.navigate(['/blog']);
     this.accountService
       .getAuthenticationState()
       .pipe(takeUntil(this.destroy$))
