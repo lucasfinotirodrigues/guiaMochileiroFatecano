@@ -1,86 +1,32 @@
-<div>
-  <h2 id="page-heading" data-cy="TagHeading">
-    <span jhiTranslate="blogApp.tag.home.title">Tags</span>
-
-    <div class="d-flex justify-content-end">
-      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
-        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
-        <span jhiTranslate="blogApp.tag.home.refreshListLabel">Refresh list</span>
-      </button>
-
-      <button
-        id="jh-create-entity"
-        data-cy="entityCreateButton"
-        class="btn btn-primary jh-create-entity create-tag"
-        [routerLink]="['/tag/new']"
-      >
-        <fa-icon icon="plus"></fa-icon>
-        <span jhiTranslate="blogApp.tag.home.createLabel">Create a new Tag</span>
-      </button>
+<div class="content-valores">
+  <div class="d-flex flex-wrap justify-content-between mb-4">
+    <h2 class="titulo">Valores e deveres do aluno </h2>
+    <div class="d-flex gap-2">
+      <h2 class="titulo">Olá,</h2>
+      <h4 class="titulos">João Pedro</h4>
     </div>
-  </h2>
-
-  <jhi-alert-error></jhi-alert-error>
-
-  <jhi-alert></jhi-alert>
-
-  @if (tags?.length === 0) {
-    <div class="alert alert-warning" id="no-result">
-      <span jhiTranslate="blogApp.tag.home.notFound">No Tags found</span>
+  </div>
+  <h3 class="subtitulo" *ngIf="conteudo">Os alunos da FATEC têm o compromisso de cultivar valores como respeito, responsabilidade, ética e colaboração em sua jornada acadêmica. Eles devem assumir a responsabilidade por seu próprio aprendizado, agindo com integridade e colaborando de forma ética com colegas e professores. Além disso, é essencial que demonstrem autonomia em suas escolhas, engajamento cívico e cuidado com o ambiente universitário, contribuindo assim para o desenvolvimento pessoal e coletivo dentro da comunidade acadêmica.
+  </h3>
+  <h3 class="subtitulo" *ngIf="!conteudo">Os alunos da FATEC têm o compromisso de cultivar valores como respeito, responsabilidade, ética e colaboração em sua jornada acadêmica...</h3>
+  <h5 class="ler" *ngIf="conteudo" (click)=" mostrarConteudo()">Ler menos</h5>
+  <h5 class="ler" *ngIf="!conteudo" (click)=" mostrarConteudo()">Ler mais</h5>
+  <div class="group-cards d-flex flex-wrap justify-content-between mb-4">
+    <div class="card d-flex align-items-center justify-content-center gap-3"
+         *ngFor="let item of valoresUm"
+         [style.background-color]="item.cor"
+        >
+      <h2 class="text-card">{{item.valores}}</h2>
+      <img [src]="'../../../../content/images/' + item.img + '.svg'" alt="icon">
     </div>
-  }
-
-  @if (tags && tags.length > 0) {
-    <div class="table-responsive table-entities" id="entities">
-      <table class="table table-striped" aria-describedby="page-heading">
-        <thead>
-          <tr jhiSort [sortState]="sortState" (sortChange)="navigateToWithComponentValues($event)">
-            <th scope="col" jhiSortBy="id">
-              <div class="d-flex">
-                <span jhiTranslate="global.field.id">ID</span>
-
-                <fa-icon class="p-1" icon="sort"></fa-icon>
-              </div>
-            </th>
-            <th scope="col" jhiSortBy="name">
-              <div class="d-flex">
-                <span jhiTranslate="blogApp.tag.name">Name</span>
-
-                <fa-icon class="p-1" icon="sort"></fa-icon>
-              </div>
-            </th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody infinite-scroll (scrolled)="loadNextPage()" [infiniteScrollDisabled]="!hasMorePage()" [infiniteScrollDistance]="0">
-          @for (tag of tags; track trackId) {
-            <tr data-cy="entityTable">
-              <td>
-                <a [routerLink]="['/tag', tag.id, 'view']">{{ tag.id }}</a>
-              </td>
-              <td>{{ tag.name }}</td>
-              <td class="text-end">
-                <div class="btn-group">
-                  <a [routerLink]="['/tag', tag.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
-                    <fa-icon icon="eye"></fa-icon>
-                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
-                  </a>
-
-                  <a [routerLink]="['/tag', tag.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
-                    <fa-icon icon="pencil-alt"></fa-icon>
-                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
-                  </a>
-
-                  <button type="submit" (click)="delete(tag)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
-                    <fa-icon icon="times"></fa-icon>
-                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
-                  </button>
-                </div>
-              </td>
-            </tr>
-          }
-        </tbody>
-      </table>
+  </div>
+  <div class="group-cards d-flex flex-wrap justify-content-between">
+    <div class="card d-flex align-items-center justify-content-center gap-3"
+         *ngFor="let item of valoresDois"
+         [style.background-color]="item.cor"
+         >
+      <h2 class="text-card">{{item.valores}}</h2>
+      <img [src]="'../../../../content/images/' + item.img + '.svg'" alt="icon">
     </div>
-  }
+  </div>
 </div>
