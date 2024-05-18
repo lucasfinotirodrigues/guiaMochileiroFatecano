@@ -23,7 +23,7 @@ export default class MainComponent implements OnInit {
   private accountService = inject(AccountService);
   private translateService = inject(TranslateService);
   private rootRenderer = inject(RendererFactory2);
-
+  account = inject(AccountService).trackCurrentAccount();
   constructor() {
     this.renderer = this.rootRenderer.createRenderer(document.querySelector('html'), null);
   }
