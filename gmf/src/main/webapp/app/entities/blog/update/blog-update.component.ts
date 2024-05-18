@@ -12,11 +12,13 @@ import { UserService } from 'app/entities/user/service/user.service';
 import { IBlog } from '../blog.model';
 import { BlogService } from '../service/blog.service';
 import { BlogFormService, BlogFormGroup } from './blog-form.service';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   standalone: true,
   selector: 'jhi-blog-update',
   templateUrl: './blog-update.component.html',
+  styleUrls: ['./blog-update.component.scss'],
   imports: [SharedModule, FormsModule, ReactiveFormsModule],
 })
 export class BlogUpdateComponent implements OnInit {
@@ -29,6 +31,7 @@ export class BlogUpdateComponent implements OnInit {
   protected blogFormService = inject(BlogFormService);
   protected userService = inject(UserService);
   protected activatedRoute = inject(ActivatedRoute);
+  private activedModal = inject(NgbActiveModal)
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
   editForm: BlogFormGroup = this.blogFormService.createBlogFormGroup();
@@ -58,6 +61,7 @@ export class BlogUpdateComponent implements OnInit {
     } else {
       this.subscribeToSaveResponse(this.blogService.create(blog));
     }
+    this.activedModal.dismiss();
   }
 
   protected subscribeToSaveResponse(result: Observable<HttpResponse<IBlog>>): void {

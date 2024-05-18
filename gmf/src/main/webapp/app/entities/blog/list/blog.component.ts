@@ -1,7 +1,7 @@
 import { Component, NgZone, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Data, ParamMap, Router, RouterModule } from '@angular/router';
 import { combineLatest, filter, Observable, Subscription, tap } from 'rxjs';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import SharedModule from 'app/shared/shared.module';
 import { sortStateSignal, SortDirective, SortByDirective, type SortState, SortService } from 'app/shared/sort';
@@ -11,11 +11,13 @@ import { SORT, ITEM_DELETED_EVENT, DEFAULT_SORT_DATA } from 'app/config/navigati
 import { IBlog } from '../blog.model';
 import { EntityArrayResponseType, BlogService } from '../service/blog.service';
 import { BlogDeleteDialogComponent } from '../delete/blog-delete-dialog.component';
+import { BlogUpdateComponent } from '../update/blog-update.component';
 
 @Component({
   standalone: true,
   selector: 'jhi-blog',
   templateUrl: './blog.component.html',
+  styleUrls: ['./blog.component.scss'],
   imports: [
     RouterModule,
     FormsModule,
@@ -54,6 +56,10 @@ export class BlogComponent implements OnInit {
         }),
       )
       .subscribe();
+  }
+  
+  openModalAdicionarTurma():void {
+   this.modalService.open(BlogUpdateComponent, {size: 'md', backdrop: 'static'})
   }
 
   delete(blog: IBlog): void {

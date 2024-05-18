@@ -1,25 +1,21 @@
 @if (blog) {
   <form name="deleteForm" (ngSubmit)="confirmDelete(blog.id!)">
     <div class="modal-header">
-      <h4 class="modal-title" data-cy="blogDeleteDialogHeading" jhiTranslate="entity.delete.title">Confirm delete operation</h4>
-
-      <span class="btn btn-close" data-dismiss="modal" aria-hidden="true" (click)="cancel()"></span>
+      <h2 class="titulo" id="jhi-delete-blog-heading">Excluindo termo</h2>
     </div>
 
     <div class="modal-body">
       <jhi-alert-error></jhi-alert-error>
-      <p id="jhi-delete-blog-heading" jhiTranslate="blogApp.blog.delete.question" [translateValues]="{ id: blog.id }">
-        Are you sure you want to delete Blog {{ blog.id }}?
-      </p>
+      <p id="jhi-delete-blog-heading">Tem certeza que deseja excluir o <strong>{{blog.name}}</strong>?</p>
     </div>
 
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancel()">
-        <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancelar</span>
       </button>
 
       <button id="jhi-confirm-delete-blog" data-cy="entityConfirmDeleteButton" type="submit" class="btn btn-danger">
-        <fa-icon icon="times"></fa-icon>&nbsp;<span jhiTranslate="entity.action.delete">Delete</span>
+        <fa-icon icon="times"></fa-icon>&nbsp;<span>Excluir</span>
       </button>
     </div>
   </form>
