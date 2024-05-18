@@ -1,0 +1,25 @@
+entity Term {
+    term String required
+}
+
+entity Discipline {
+    name String required
+    description String
+}
+
+entity Materia {
+    documentName String
+    resume String required
+}
+
+relationship OneToMany {
+    Term { discipline } to Discipline
+}
+
+relationship OneToMany {
+    Discipline { materia } to Materia
+}
+
+paginate Term, Discipline, Materia with pagination
+
+service all with serviceImpl
