@@ -5,32 +5,32 @@ const routes: Routes = [
   {
     path: 'user-management',
     loadChildren: () => import('./user-management/user-management.route'),
-    title: 'userManagement.home.title',
+    title: 'Guia do Mochileiro Fatecano',
   },
   {
     path: 'docs',
     loadComponent: () => import('./docs/docs.component'),
-    title: 'global.menu.admin.apidocs',
+    title: 'Guia do Mochileiro Fatecano',
   },
   {
     path: 'configuration',
     loadComponent: () => import('./configuration/configuration.component'),
-    title: 'configuration.title',
+    title: 'Guia do Mochileiro Fatecano',
   },
   {
     path: 'health',
     loadComponent: () => import('./health/health.component'),
-    title: 'health.title',
+    title: 'Guia do Mochileiro Fatecano',
   },
   {
     path: 'logs',
     loadComponent: () => import('./logs/logs.component'),
-    title: 'logs.title',
+    title: 'Guia do Mochileiro Fatecano',
   },
   {
     path: 'metrics',
     loadComponent: () => import('./metrics/metrics.component'),
-    title: 'metrics.title',
+    title: 'Guia do Mochileiro Fatecano',
   },
   /* jhipster-needle-add-admin-route - JHipster will add admin routes here */
 ];
