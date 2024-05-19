@@ -1,0 +1,17 @@
+<div class="content-modal d-flex flex-column gap-5">
+    <div class="d-flex justify-content-between align-items-center">
+      <h3>{{post?.title}}</h3>
+      <img src="../../content/images/x.svg" alt="icon" (click)="close()">
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <h4>Copiar resumo</h4>
+      <div class="cards" (click)="copyContent()">
+        <img src="../../content/images/copy.svg" alt="icon">
+      </div>
+    </div>
+   @if(confirmationMessage){
+        <p class="alert alert-secondary">{{confirmationMessage}}</p>
+    }
+    <h2>{{post?.content}}</h2>
+  </div>
+   
