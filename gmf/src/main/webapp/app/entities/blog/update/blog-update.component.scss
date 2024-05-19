@@ -1,3 +1,13 @@
 .content-modal {
     padding: 24px;
 }
+
+
+button {
+    cursor: pointer;
+}
+
+.btn-primary  {
+    background-color: var(--color-secondary);
+    border: none;
+}

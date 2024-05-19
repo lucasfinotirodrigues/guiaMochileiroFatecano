@@ -58,9 +58,9 @@
         </div>
       </div>
 
-      <div>
+      <div class="d-flex justify-content-end gap-3">
         <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
-          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+          <span>Cancelar</span>
         </button>
 
         <button
@@ -70,7 +70,7 @@
           [disabled]="editForm.invalid || isSaving"
           class="btn btn-primary"
         >
-          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        <span>Salvar</span>
         </button>
       </div>
     </form>
