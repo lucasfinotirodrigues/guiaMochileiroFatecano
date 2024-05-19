@@ -6,6 +6,10 @@
     width: 308px;
     height: 128px;
     cursor: pointer;
+    border: none;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2), -1px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    background-color: #E2F4C5;
   
     .text-card {
         color: var(--color-gray-600);
