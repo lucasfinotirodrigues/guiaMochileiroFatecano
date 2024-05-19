@@ -50,7 +50,7 @@ export class BlogUpdateComponent implements OnInit {
   }
 
   previousState(): void {
-    window.history.back();
+    this.activedModal.close()
   }
 
   save(): void {
