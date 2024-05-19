@@ -1,16 +1,12 @@
 @if (post) {
   <form name="deleteForm" (ngSubmit)="confirmDelete(post.id!)">
     <div class="modal-header">
-      <h4 class="modal-title" data-cy="postDeleteDialogHeading" jhiTranslate="entity.delete.title">Confirm delete operation</h4>
-
-      <span class="btn btn-close" data-dismiss="modal" aria-hidden="true" (click)="cancel()"></span>
+      <h2 class="titulo" id="jhi-delete-blog-heading">Excluindo matéria</h2>
     </div>
 
     <div class="modal-body">
       <jhi-alert-error></jhi-alert-error>
-      <p id="jhi-delete-post-heading" jhiTranslate="blogApp.post.delete.question" [translateValues]="{ id: post.id }">
-        Are you sure you want to delete Post {{ post.id }}?
-      </p>
+      <p id="jhi-delete-blog-heading">Tem certeza que deseja excluir o <strong>{{post.title}}</strong>?</p>
     </div>
 
     <div class="modal-footer">

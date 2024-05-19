@@ -17,11 +17,13 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { PostDeleteDialogComponent } from '../delete/post-delete-dialog.component';
 import { EntityArrayResponseType, PostService } from '../service/post.service';
 import { IPost } from '../post.model';
+import { ModalConteudoComponent } from 'app/modal-conteudo/modal-conteudo.component';
 
 @Component({
   standalone: true,
   selector: 'jhi-post',
   templateUrl: './post.component.html',
+  styleUrls: ['./post.component.scss'],
   imports: [
     RouterModule,
     FormsModule,
@@ -81,6 +83,12 @@ export class PostComponent implements OnInit {
 
   openFile(base64String: string, contentType: string | null | undefined): void {
     return this.dataUtils.openFile(base64String, contentType);
+  }
+
+  openDetail(post: IPost): void {
+    const modalRef = this.modalService.open(ModalConteudoComponent, { size: 'md', backdrop: 'static' })
+    modalRef.componentInstance.post = post;
+    console.warn("Enviando => ",post)
   }
 
   delete(post: IPost): void {

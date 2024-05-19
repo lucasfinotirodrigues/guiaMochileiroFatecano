@@ -76,15 +76,6 @@
             }
           </select>
         </div>
-
-        <div class="mb-3">
-          <label for="field_tags" jhiTranslate="blogApp.post.tag">Tag</label>
-          <select class="form-control" id="field_tags" data-cy="tag" multiple name="tags" formControlName="tags" [compareWith]="compareTag">
-            @for (tagOption of tagsSharedCollection; track $index) {
-              <option [ngValue]="tagOption">{{ tagOption.name }}</option>
-            }
-          </select>
-        </div>
       </div>
 
       <div>

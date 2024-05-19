@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, OnInit, inject, input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import SharedModule from 'app/shared/shared.module';
@@ -12,10 +12,15 @@ import { IPost } from '../post.model';
   templateUrl: './post-detail.component.html',
   imports: [SharedModule, RouterModule, DurationPipe, FormatMediumDatetimePipe, FormatMediumDatePipe],
 })
-export class PostDetailComponent {
+export class PostDetailComponent  implements OnInit{
   post = input<IPost | null>(null);
+  id?: IPost;
 
   protected dataUtils = inject(DataUtils);
+
+  ngOnInit(): void {
+    console.warn("Cheguei do list => ", this.id)  
+  }
 
   byteSize(base64String: string): string {
     return this.dataUtils.byteSize(base64String);
