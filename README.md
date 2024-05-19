@@ -14,7 +14,7 @@ Guia do Mochileiro Fatecano (GMF)
 Tema do Projeto:
 Sistema Web que consiste em um fórum voltado aos alunos do curso de Big Data no Agronegócio com o intuito de juntar em um só lugar informações imprecindíveis quanto à matérias, eventos, costumes, valores etc.  Visando uma melhor preparação, interação e estadia dos alunos na faculdade, objetivando tornar sua jornada mais tranquila dos primeiros aos últimos dias.
 
-Caracteristicas para conseguir rodar o projeto:
+Requisitos para conseguir rodar o projeto:
 
     - Java 17
     - Node 20
@@ -36,12 +36,12 @@ npm install
 
 O próximo passo é rodar o back-end e o front-end cada um em um terminal diferente
 
-// Terminal que irá rodar a API
+// Terminal que vai iniciar a API
 
 ```
 ./mvnw
 ```
-// Terminal que irá rodar o frontend
+// Terminal que vai iniciar o frontend
 
 ```
 npm start
