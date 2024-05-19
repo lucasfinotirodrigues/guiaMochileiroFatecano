@@ -1,10 +1,7 @@
 <div class="d-flex justify-content-center">
   <div class="col-8">
     <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-      <h2 id="jhi-post-heading" data-cy="PostCreateUpdateHeading" jhiTranslate="blogApp.post.home.createOrEditLabel">
-        Create or edit a Post
-      </h2>
-
+      <h2  class="titulo mb-5" id="jhi-post-heading" data-cy="PostCreateUpdateHeading" >Crie ou edite sua matéria</h2>
       <div>
         <jhi-alert-error></jhi-alert-error>
 
@@ -16,31 +13,31 @@
         }
 
         <div class="mb-3">
-          <label class="form-label" for="field_title" jhiTranslate="blogApp.post.title">Title</label>
+          <label class="form-label" for="field_title">Nome da matéria</label>
           <input type="text" class="form-control" name="title" id="field_title" data-cy="title" formControlName="title" />
           @if (editForm.get('title')!.invalid && (editForm.get('title')!.dirty || editForm.get('title')!.touched)) {
             <div>
               @if (editForm.get('title')?.errors?.required) {
-                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">Esse campo é obrigatório</small>
               }
             </div>
           }
         </div>
 
         <div class="mb-3">
-          <label class="form-label" for="field_content" jhiTranslate="blogApp.post.content">Content</label>
+          <label class="form-label" for="field_content">Resumo</label>
           <textarea class="form-control" name="content" id="field_content" data-cy="content" formControlName="content"></textarea>
           @if (editForm.get('content')!.invalid && (editForm.get('content')!.dirty || editForm.get('content')!.touched)) {
             <div>
               @if (editForm.get('content')?.errors?.required) {
-                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">Esse campo é obrigatório</small>
               }
             </div>
           }
         </div>
 
         <div class="mb-3">
-          <label class="form-label" for="field_date" jhiTranslate="blogApp.post.date">Date</label>
+          <label class="form-label" for="field_date">Data da postagem</label>
           <div class="d-flex">
             <input
               id="field_date"
@@ -55,20 +52,20 @@
           @if (editForm.get('date')!.invalid && (editForm.get('date')!.dirty || editForm.get('date')!.touched)) {
             <div>
               @if (editForm.get('date')?.errors?.required) {
-                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+                <small class="form-text text-danger" >Esse campo é obrigatório</small>
               }
               <small
                 class="form-text text-danger"
                 [hidden]="!editForm.get('date')?.errors?.datetimelocal"
                 jhiTranslate="entity.validation.datetimelocal"
-                >This field should be a date and time.</small
+                >Este campo deve conter data e hora</small
               >
             </div>
           }
         </div>
 
         <div class="mb-3">
-          <label class="form-label" for="field_blog" jhiTranslate="blogApp.post.blog">Blog</label>
+          <label class="form-label" for="field_blog">Turma</label>
           <select class="form-control" id="field_blog" data-cy="blog" name="blog" formControlName="blog" [compareWith]="compareBlog">
             <option [ngValue]="null"></option>
             @for (blogOption of blogsSharedCollection; track $index) {
