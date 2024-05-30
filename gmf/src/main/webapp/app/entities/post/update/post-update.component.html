@@ -18,7 +18,7 @@
           @if (editForm.get('title')!.invalid && (editForm.get('title')!.dirty || editForm.get('title')!.touched)) {
             <div>
               @if (editForm.get('title')?.errors?.required) {
-                <small class="form-text text-danger" jhiTranslate="entity.validation.required">Esse campo é obrigatório</small>
+                <small class="form-text text-danger">Esse campo é obrigatório</small>
               }
             </div>
           }
@@ -30,7 +30,7 @@
           @if (editForm.get('content')!.invalid && (editForm.get('content')!.dirty || editForm.get('content')!.touched)) {
             <div>
               @if (editForm.get('content')?.errors?.required) {
-                <small class="form-text text-danger" jhiTranslate="entity.validation.required">Esse campo é obrigatório</small>
+                <small class="form-text text-danger">Esse campo é obrigatório</small>
               }
             </div>
           }
@@ -57,7 +57,6 @@
               <small
                 class="form-text text-danger"
                 [hidden]="!editForm.get('date')?.errors?.datetimelocal"
-                jhiTranslate="entity.validation.datetimelocal"
                 >Este campo deve conter data e hora</small
               >
             </div>

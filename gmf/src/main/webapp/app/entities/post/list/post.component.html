@@ -1,10 +1,15 @@
 <div class="content-termos">
-  <div class="d-flex flex-wrap align-items-center justify-content-end gap-4 mb-5">
-  </div>
-  <div class="d-flex justify-content-end">
-    <button class="adicionar d-flex align-items-center justify-content-between mb-5 gap-4" [routerLink]="['/post/new']">
+  <div class="d-flex flex-wrap justify-content-between gap-3 mb-4">
+    <div class="d-flex flex-column gap-2">
+      <h2 class="titulo">Matéria</h2>
+      <h3 class="subtitulo">Qual matéria você gostaria de acessar hoje?</h3>
+    </div>
+    <button 
+      class="adicionar d-flex align-items-center justify-content-between mb-5 gap-4"
+      [routerLink]="['/post/new']"
+      >
       <img src="../../../../content/images/move.svg" alt="icone">
-      <span>Adicionar Disciplina</span>
+      <span>Adicionar Matéria</span>
     </button>
   </div>
   <div class="group-cards d-flex flex-wrap justify-content-between gap-4 mb-4">
