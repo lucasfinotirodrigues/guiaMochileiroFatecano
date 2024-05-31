@@ -19,7 +19,7 @@
           <label class="form-label" for="field_name">Nome</label>
           <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
           @if (editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)) {
-            <div>
+            <div class="mt-3">
               @if (editForm.get('name')?.errors?.required) {
                 <small class="form-text text-danger">Esse campo é obrigatório</small>
               }
@@ -35,7 +35,7 @@
           <label class="form-label" for="field_handle">Semestre/Ano</label>
           <input type="text" class="form-control" name="handle" id="field_handle" data-cy="handle" formControlName="handle" />
           @if (editForm.get('handle')!.invalid && (editForm.get('handle')!.dirty || editForm.get('handle')!.touched)) {
-            <div>
+            <div class="mt-3">
               @if (editForm.get('handle')?.errors?.required) {
                 <small class="form-text text-danger">Esse campo é obrigatório</small>
               }
@@ -48,7 +48,7 @@
         </div>
 
         <div class="mb-3">
-          <label class="form-label" for="field_user" jhiTranslate="blogApp.blog.user">User</label>
+          <label class="form-label" for="field_user">Usuário</label>
           <select class="form-control" id="field_user" data-cy="user" name="user" formControlName="user" [compareWith]="compareUser">
             <option [ngValue]="null"></option>
             @for (userOption of usersSharedCollection; track $index) {
