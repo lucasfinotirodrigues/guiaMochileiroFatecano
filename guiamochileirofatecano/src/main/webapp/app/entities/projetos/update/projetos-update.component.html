@@ -1,0 +1,75 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="app-projetos-heading" data-cy="ProjetosCreateUpdateHeading" appTranslate="gmfApp.projetos.home.createOrEditLabel">
+        Criar ou editar Projetos
+      </h2>
+
+      <div>
+        <app-alert-error></app-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" appTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" appTranslate="gmfApp.projetos.nome" for="field_nome">Nome</label>
+          <input type="text" class="form-control" name="nome" id="field_nome" data-cy="nome" formControlName="nome" />
+          <div *ngIf="editForm.get('nome')!.invalid && (editForm.get('nome')!.dirty || editForm.get('nome')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('nome')?.errors?.required" appTranslate="entity.validation.required">
+              O campo é obrigatório.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" appTranslate="gmfApp.projetos.assunto" for="field_assunto">Assunto</label>
+          <input type="text" class="form-control" name="assunto" id="field_assunto" data-cy="assunto" formControlName="assunto" />
+          <div *ngIf="editForm.get('assunto')!.invalid && (editForm.get('assunto')!.dirty || editForm.get('assunto')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('assunto')?.errors?.required"
+              appTranslate="entity.validation.required"
+            >
+              O campo é obrigatório.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" appTranslate="gmfApp.projetos.disciplinas" for="field_disciplinas">Disciplinas</label>
+          <select
+            class="form-control"
+            id="field_disciplinas"
+            data-cy="disciplinas"
+            name="disciplinas"
+            formControlName="disciplinas"
+            [compareWith]="compareDisciplinas"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="disciplinasOption" *ngFor="let disciplinasOption of disciplinasSharedCollection">
+              {{ disciplinasOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span appTranslate="entity.action.cancel">Cancelar</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span appTranslate="entity.action.save">Salvar</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

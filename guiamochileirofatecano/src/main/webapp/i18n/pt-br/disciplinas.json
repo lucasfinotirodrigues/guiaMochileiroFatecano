@@ -1,0 +1,28 @@
+{
+  "gmfApp": {
+    "disciplinas": {
+      "home": {
+        "title": "Disciplinas",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Disciplinas",
+        "createOrEditLabel": "Criar ou editar Disciplinas",
+        "notFound": "Nenhum Disciplinas encontrado"
+      },
+      "created": "Um novo Disciplinas foi criado com o identificador {{ param }}",
+      "updated": "Um Disciplinas foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Disciplinas foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Disciplinas {{ id }}?"
+      },
+      "detail": {
+        "title": "Disciplinas"
+      },
+      "id": "ID",
+      "nome": "Nome",
+      "createdDate": "Created Date",
+      "resumos": "Resumos",
+      "projetos": "Projetos",
+      "termos": "Termos"
+    }
+  }
+}

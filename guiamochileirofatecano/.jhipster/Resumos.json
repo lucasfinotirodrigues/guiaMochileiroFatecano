@@ -1,0 +1,39 @@
+{
+  "applications": ["gmf"],
+  "changelogDate": "20240822125549",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "resumos",
+  "fields": [
+    {
+      "fieldName": "assunto",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "resumo",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Resumos",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "disciplinas",
+      "otherEntityRelationshipName": "resumos",
+      "relationshipName": "disciplinas",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

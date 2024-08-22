@@ -1,0 +1,27 @@
+{
+  "gmfApp": {
+    "resumos": {
+      "home": {
+        "title": "Resumos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Resumos",
+        "createOrEditLabel": "Criar ou editar Resumos",
+        "notFound": "Nenhum Resumos encontrado"
+      },
+      "created": "Um novo Resumos foi criado com o identificador {{ param }}",
+      "updated": "Um Resumos foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Resumos foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Resumos {{ id }}?"
+      },
+      "detail": {
+        "title": "Resumos"
+      },
+      "id": "ID",
+      "assunto": "Assunto",
+      "resumo": "Resumo",
+      "createdDate": "Created Date",
+      "disciplinas": "Disciplinas"
+    }
+  }
+}

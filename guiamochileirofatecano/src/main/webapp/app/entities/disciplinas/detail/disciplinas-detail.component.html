@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="disciplinas">
+      <h2 data-cy="disciplinasDetailsHeading"><span appTranslate="gmfApp.disciplinas.detail.title">Disciplinas</span></h2>
+
+      <hr />
+
+      <app-alert-error></app-alert-error>
+
+      <app-alert></app-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span appTranslate="global.field.id">Código</span></dt>
+        <dd>
+          <span>{{ disciplinas.id }}</span>
+        </dd>
+        <dt><span appTranslate="gmfApp.disciplinas.nome">Nome</span></dt>
+        <dd>
+          <span>{{ disciplinas.nome }}</span>
+        </dd>
+        <dt><span appTranslate="gmfApp.disciplinas.createdDate">Created Date</span></dt>
+        <dd>
+          <span>{{ disciplinas.createdDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span appTranslate="gmfApp.disciplinas.termos">Termos</span></dt>
+        <dd>
+          <div *ngIf="disciplinas.termos">
+            <a [routerLink]="['/termos', disciplinas.termos.id, 'view']">{{ disciplinas.termos.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span appTranslate="entity.action.back">Voltar</span>
+      </button>
+
+      <button type="button" [routerLink]="['/disciplinas', disciplinas.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span appTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>
