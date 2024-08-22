@@ -1,6 +1,6 @@
 @import 'bootstrap-variables';
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
 
 /* ==============================================================
 Bootstrap tweaks
@@ -14,7 +14,7 @@ h4 {
   font-weight: 300;
 }
 
-/* Increase contrast of links to get 100% on Lighthouse Accessability Audit. Override this color if you want to change the link color, or use a Bootswatch theme */
+/* Increase contrast of links to get 100% on Lighthouse Accessibility Audit. Override this color if you want to change the link color, or use a Bootswatch theme */
 a {
   color: #533f03;
   font-weight: bold;
@@ -57,22 +57,25 @@ Browser Upgrade Prompt
 Generic styles
 ========================================================================== */
 
-/* Error highlight on input fields */
+/* Error highlight on input fields 
 .ng-valid[required],
 .ng-valid.required {
-  border-left: 5px solid green;
+  border: 1px solid green;
 }
 
-.ng-invalid:not(form) {
-  border-left: 5px solid red;
-}
+.ng-invalid:not(form):focus  {
+  border: 1px solid red;
+}*/
 
 /* other generic styles */
 
 .jh-card {
   padding: 1.5%;
-  margin-top: 20px;
+  // margin-top: 20px;
   border: none;
+  height: 100vh;
+  display: flex;
+  // justify-content: center;
 }
 
 .error {
@@ -111,7 +114,7 @@ Generic styles
 }
 
 .hand,
-[appsortby] {
+[jhisortby] {
   cursor: pointer;
 }
 
@@ -121,6 +124,7 @@ Custom alerts for notification
 .alerts {
   .alert {
     text-overflow: ellipsis;
+
     pre {
       background: none;
       border: none;
@@ -129,22 +133,28 @@ Custom alerts for notification
       padding: 0;
       margin: 0;
     }
+
     .popover pre {
       font-size: 10px;
     }
   }
+
   .jhi-toast {
     position: fixed;
     width: 100%;
+
     &.left {
       left: 5px;
     }
+
     &.right {
       right: 5px;
     }
+
     &.top {
       top: 55px;
     }
+
     &.bottom {
       bottom: 55px;
     }
@@ -161,7 +171,7 @@ Custom alerts for notification
 entity list page css
 ========================================================================== */
 
-.table-entities thead th .d-flex > * {
+.table-entities thead th .d-flex>* {
   margin: auto 0;
 }
 
@@ -176,7 +186,7 @@ entity detail page css
 }
 
 @media screen and (min-width: 768px) {
-  .row-md.jh-entity-details > {
+  .row-md.jh-entity-details> {
     dt {
       float: left;
       overflow: hidden;
@@ -186,6 +196,7 @@ entity detail page css
       white-space: nowrap;
       padding: 0.5em 0;
     }
+
     dd {
       border-bottom: 1px solid #eee;
       padding: 0.5em 0;
@@ -236,4 +247,208 @@ angular-cli removes postcss-rtl processed inline css, processed rules must be ad
     }
   }
 }
+
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+
+
+
+
+//Reset CSS
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+// Variaveis globais
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --color-primary: #2AEF88;
+  --color-secondary: #21BC6B;
+  --color-secondary-hover: #1d9c5a;
+  --color-tertiary: #148B4D;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-gray-100: #F1F0F5;
+  --color-gray-200: #C6C5CE;
+  --color-gray-300: #7A7786;
+  --color-gray-400: #5F5C6B;
+  --color-gray-500: #4E4B59;
+  --color-gray-600: #3E3E3E;
+}
+
+
+// Estilos modais
+
+.content-modal {
+  padding: 30px 42px;
+
+  h3 {
+    font-size: 18;
+    font-weight: 600;
+    color: var(--color-black);
+  }
+
+  img {
+    cursor: pointer;
+  }
+}
+
+// Estilo das telas com formulários
+
+.background {
+  width: 600px;
+}
+
+// Estilos do título e sub-título
+
+h2.titulo {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-gray-600);
+}
+
+h3.subtitulo {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-gray-300);
+}
+
+h4.titulos {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
