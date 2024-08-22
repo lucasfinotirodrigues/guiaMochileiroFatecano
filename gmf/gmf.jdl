@@ -1,0 +1,59 @@
+application {
+  config {
+    baseName gmf
+    packageName br.org.ciag.gmf
+    applicationType monolith
+    authenticationType jwt
+    buildTool gradle
+    databaseType sql
+    devDatabaseType mysql
+    prodDatabaseType mysql
+    dtoSuffix Dto
+    enableHibernateCache true
+    enableTranslation true
+    clientFramework angularX
+    clientPackageManager npm
+    nativeLanguage pt-br
+    jhiPrefix app
+    testFrameworks [gatling]
+  }
+  entities*
+}
+
+entity Termos {
+    nome NumeroTermo required
+    semestre NumeroSemestre required 
+    ano String required
+}
+
+entity Disciplinas {
+    nome String required
+    createdDate Instant required
+}
+
+entity Resumos {
+    assunto String required
+    resumo TextBlob required
+    createdDate Instant required
+}
+
+entity Projetos {
+    nome String required
+    assunto String required
+}
+
+enum NumeroTermo {
+ 	PRIMEIRO, SEGUNDO, TERCEIRO, QUARTO, QUINTO, SEXTO
+}
+
+enum NumeroSemestre {
+	PRIMEIRO, SEGUNDO
+}
+
+relationship OneToMany {
+    Termos to Disciplinas
+    Disciplinas to Resumos
+    Disciplinas to Projetos
+}
+
+paginate all with pagination
