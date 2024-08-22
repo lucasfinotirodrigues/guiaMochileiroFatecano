@@ -22,10 +22,10 @@ Requisitos para conseguir rodar o projeto:
 
 Iniciar o Projeto: 
 
-Basta navegar para o diretório 'gmf' com o comando 
+Basta navegar para o diretório 'guiamochileirofatecano' com o comando 
 
 ```
-cd gmf
+cd guiamochileirofatecano
 ```
 
 Após isso vamos instalar as depêndencias do projeto com o comando 
@@ -39,7 +39,7 @@ O próximo passo é rodar o back-end e o front-end cada um em um terminal difere
 // Terminal que vai iniciar a API
 
 ```
-./mvnw
+./gradlew -x webapp
 ```
 // Terminal que vai iniciar o frontend
 
