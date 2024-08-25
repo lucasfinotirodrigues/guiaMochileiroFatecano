@@ -10,10 +10,12 @@ import { ITEMS_PER_PAGE, PAGE_HEADER, TOTAL_COUNT_RESPONSE_HEADER } from 'app/co
 import { ASC, DESC, SORT, ITEM_DELETED_EVENT, DEFAULT_SORT_DATA } from 'app/config/navigation.constants';
 import { EntityArrayResponseType, DisciplinasService } from '../service/disciplinas.service';
 import { DisciplinasDeleteDialogComponent } from '../delete/disciplinas-delete-dialog.component';
+import { DisciplinasDetailComponent } from '../detail/disciplinas-detail.component';
 
 @Component({
   selector: 'app-disciplinas',
   templateUrl: './disciplinas.component.html',
+  styleUrls: ['./disciplinas.component.scss']
 })
 export class DisciplinasComponent implements OnInit {
   disciplinas?: IDisciplinas[];
@@ -53,6 +55,12 @@ export class DisciplinasComponent implements OnInit {
           this.onResponseSuccess(res);
         },
       });
+  }
+
+  openDetail(disciplina: IDisciplinas): void {
+    const modalRef = this.modalService.open(DisciplinasDetailComponent, { size: 'md', backdrop: 'static' })
+    modalRef.componentInstance.disciplina = disciplina;
+    console.warn("Enviando => ",disciplina)
   }
 
   load(): void {

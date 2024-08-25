@@ -1,3 +1,48 @@
+<div class="content-termos">
+  <div class="d-flex flex-wrap justify-content-between gap-3 mb-4">
+    <div class="d-flex flex-column gap-2">
+      <h2 class="titulo">Matéria</h2>
+      <h3 class="subtitulo">Qual matéria você gostaria de acessar hoje?</h3>
+    </div>
+    <button 
+      class="adicionar d-flex align-items-center justify-content-between mb-5 gap-4"
+      [routerLink]="['/disciplinas/new']"
+      >
+      <img src="../../../../content/images/move.svg" alt="icone">
+      <span>Adicionar Matéria</span>
+    </button>
+  </div>
+  <div class="group-cards d-flex flex-wrap justify-content-between gap-4 mb-4">
+    <div class="card d-flex align-items-center justify-content-center" *ngFor="let post of disciplinas; track trackId">
+      <div ngbDropdown class="more">
+        <img class="cursor" src=".../../../../content/images/more-vertical.svg" alt="icon" ngbDropdownToggle>
+        <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+          <button 
+            ngbDropdownItem 
+            class="d-flex align-items-center gap-3"
+            [routerLink]="['/post', post.id, 'edit']"
+            >
+            <img class="icon-card" src=".../../../../content/images/edit.svg" alt="icon">
+            Editar
+          </button>
+          <button  
+            ngbDropdownItem 
+            class="d-flex align-items-center gap-3"
+            (click)="delete(post)" 
+            >
+            <img class="icon-card" src="../../../../content/images/trash.svg" alt="icon">
+            Excluir
+          </button>
+        </div>
+      </div>
+        <h2 class="text-card" (click)="openDetail(post)">{{post.nome}}</h2>
+    </div>
+  </div>
+</div>
+
+
+
+
 <div>
   <h2 id="page-heading" data-cy="DisciplinasHeading">
     <span appTranslate="gmfApp.disciplinas.home.title">Disciplinas</span>

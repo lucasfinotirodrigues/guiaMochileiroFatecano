@@ -9,7 +9,8 @@ import { IDisciplinas } from '../disciplinas.model';
 })
 export class DisciplinasDetailComponent implements OnInit {
   disciplinas: IDisciplinas | null = null;
-
+  disciplina: any;
+  
   constructor(protected activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
