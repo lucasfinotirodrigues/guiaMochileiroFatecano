@@ -8,11 +8,12 @@ import { AccountService } from 'app/core/auth/account.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit, AfterViewInit {
   @ViewChild('username', { static: false })
   username!: ElementRef;
-
+  mostrarSenha = false;
   authenticationError = false;
 
   loginForm = new FormGroup({
@@ -34,6 +35,10 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.username.nativeElement.focus();
+  }
+
+  visibilidadeSenha(){
+    this.mostrarSenha = !this.mostrarSenha
   }
 
   login(): void {
