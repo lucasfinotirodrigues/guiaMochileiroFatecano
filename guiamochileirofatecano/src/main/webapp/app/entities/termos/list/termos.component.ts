@@ -14,6 +14,7 @@ import { TermosDeleteDialogComponent } from '../delete/termos-delete-dialog.comp
 @Component({
   selector: 'app-termos',
   templateUrl: './termos.component.html',
+  styleUrls: ['./termos.component.scss']
 })
 export class TermosComponent implements OnInit {
   termos?: ITermos[];

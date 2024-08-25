@@ -1,0 +1,87 @@
+.content-home {
+    padding: 40px 80px;
+  }
+  
+  .adicionar {
+    border: none;
+    background-color: var(--color-secondary);
+    border-radius: 5px;
+    height: 52px;
+    padding: 24px;
+  
+  
+    &:hover {
+      background-color: var(--color-secondary-hover);
+      transition: 0.3s;
+    }
+  
+    span {
+      color: var(--color-white);
+    }
+  }
+  
+  .cursor {
+    cursor: pointer;
+  }
+  
+  .dropdown-item {
+    color: var(--color-gray-300);
+  
+    &:hover {
+      background-color: #21bc6bad;
+    }
+  }
+  
+  .dropdown-menu {
+    padding: 0;
+  }
+  
+  .group-cards {
+    position: relative;
+  }
+  
+  .more {
+    position: absolute;
+    right: 10px;
+    top: 16px;
+  }
+  
+  .card {
+    width: 260px;
+    height: 192px;
+    border: none;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2), -1px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    background-color: #E2F4C5;
+  
+    .text-card {
+      color: var(--color-gray-600);
+      text-transform: capitalize;
+      font-weight: 500;
+      font-size: 28px;
+    }
+  }
+  
+  @media screen and (max-width: 575px) {
+    .content-home {
+      padding: 32px;
+    }
+  
+    .card {
+      width: 100%;
+    }
+  
+    .group-cards {
+      gap: 28px;
+    }
+  
+  }
+  
+  
+  @media screen and (max-width: 678px) {
+    .adicionar {
+      margin-top: 12px;
+      height: 56px;
+    }
+  }
+  
