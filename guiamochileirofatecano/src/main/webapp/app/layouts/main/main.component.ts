@@ -12,6 +12,7 @@ import { AccountService } from 'app/core/auth/account.service';
 })
 export class MainComponent implements OnInit {
   private renderer: Renderer2;
+  isAuthenticated = false;
 
   constructor(
     private accountService: AccountService,
@@ -24,8 +25,15 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // try to log in automatically
-    this.accountService.identity().subscribe();
+    // Verifica o estado inicial de autenticação
+    this.accountService.identity().subscribe(account => {
+      this.isAuthenticated = !!account;
+    });
+
+    // Escuta mudanças no estado de autenticação
+    this.accountService.getAuthenticationState().subscribe(account => {
+      this.isAuthenticated = !!account;
+    });
 
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
