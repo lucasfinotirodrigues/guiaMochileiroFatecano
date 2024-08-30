@@ -39,6 +39,11 @@
       <h2 class="text-card" *ngIf="termos.nome === 'QUARTO'">4° Termo</h2>
       <h2 class="text-card" *ngIf="termos.nome === 'QUINTO'">5° Termo</h2>
       <h2 class="text-card" *ngIf="termos.nome === 'SEXTO'">6° Termo</h2>
+      
+      <div class="card-buttons">
+        <button class="btn btn-disciplinas" [routerLink]="['/disciplinas']">Disciplinas</button>
+        <button class="btn btn-projetos"  [routerLink]="['/projetos']">Projetos</button>
+      </div>
     </div>
   </div> 
 </div>
