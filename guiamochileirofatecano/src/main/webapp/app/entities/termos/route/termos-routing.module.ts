@@ -7,6 +7,7 @@ import { TermosDetailComponent } from '../detail/termos-detail.component';
 import { TermosUpdateComponent } from '../update/termos-update.component';
 import { TermosRoutingResolveService } from './termos-routing-resolve.service';
 import { ASC } from 'app/config/navigation.constants';
+import { ValoresComponent } from 'app/entities/valores/valores.component';
 
 const termosRoute: Routes = [
   {
@@ -41,6 +42,14 @@ const termosRoute: Routes = [
     },
     canActivate: [UserRouteAccessService],
   },
+  {
+    path: 'valores',
+    component: ValoresComponent,
+    resolve: {
+      termos: TermosRoutingResolveService,
+    },
+    canActivate: [UserRouteAccessService],
+  }
 ];
 
 @NgModule({
