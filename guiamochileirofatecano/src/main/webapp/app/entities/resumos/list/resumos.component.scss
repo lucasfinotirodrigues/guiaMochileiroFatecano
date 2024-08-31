@@ -4,52 +4,17 @@
   
   .card {
     width: 308px;
-    height: 136px;
+    height: 128px;
     cursor: pointer;
     border: none;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2), -1px 0px 4px 0px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     background-color: #E2F4C5;
-    position: relative;
-    overflow: hidden;
-
+  
     .text-card {
-      color: var(--color-gray-600);
-      text-transform: capitalize;
-      font-weight: 500;
-      font-size: 16px;
-    }
-  }
-  
-  .card-content {
-    transition: opacity 0.3s ease;
-  }
-  
-  .card-buttons {
-    display: none;
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    flex-direction: row;
-    gap: 10px;
-  }
-  
-  .card:hover .card-content {
-    opacity: 0; 
-    transition: 2s  }
-  
-  .card:hover .card-buttons {
-    display: flex; 
-  }
-  
-  .btn-projetos, .btn-disciplinas {
-    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2), -1px 0px 4px 0px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    background-color: #d9eabd;
-
-    &:hover {
-      background-color: #cdddb3;
+        color: var(--color-gray-600);
+        font-weight: 500;
+        font-size: 16px;
     }
   }
 

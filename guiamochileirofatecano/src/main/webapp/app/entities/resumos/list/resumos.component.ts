@@ -15,6 +15,7 @@ import { DataUtils } from 'app/core/util/data-util.service';
 @Component({
   selector: 'app-resumos',
   templateUrl: './resumos.component.html',
+  styleUrls: ['./resumos.component.scss']
 })
 export class ResumosComponent implements OnInit {
   resumos?: IResumos[];
