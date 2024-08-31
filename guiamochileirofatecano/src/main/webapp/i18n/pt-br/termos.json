@@ -1,0 +1,27 @@
+{
+  "gmfApp": {
+    "termos": {
+      "home": {
+        "title": "Termos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Termos",
+        "createOrEditLabel": "Criar ou editar Termos",
+        "notFound": "Nenhum Termos encontrado"
+      },
+      "created": "Um novo Termos foi criado com o identificador {{ param }}",
+      "updated": "Um Termos foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Termos foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Termos {{ id }}?"
+      },
+      "detail": {
+        "title": "Termos"
+      },
+      "id": "ID",
+      "nome": "Nome",
+      "semestre": "Semestre",
+      "ano": "Ano",
+      "disciplinas": "Disciplinas"
+    }
+  }
+}

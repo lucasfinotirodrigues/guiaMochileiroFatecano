@@ -1,0 +1,45 @@
+{
+  "applications": ["gmf"],
+  "changelogDate": "20240822125449",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "disciplinas",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Disciplinas",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "resumos",
+      "otherEntityRelationshipName": "disciplinas",
+      "relationshipName": "resumos",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "projetos",
+      "otherEntityRelationshipName": "disciplinas",
+      "relationshipName": "projetos",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "termos",
+      "otherEntityRelationshipName": "disciplinas",
+      "relationshipName": "termos",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

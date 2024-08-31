@@ -1,0 +1,26 @@
+{
+  "gmfApp": {
+    "projetos": {
+      "home": {
+        "title": "Projetos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Projetos",
+        "createOrEditLabel": "Criar ou editar Projetos",
+        "notFound": "Nenhum Projetos encontrado"
+      },
+      "created": "Um novo Projetos foi criado com o identificador {{ param }}",
+      "updated": "Um Projetos foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Projetos foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Projetos {{ id }}?"
+      },
+      "detail": {
+        "title": "Projetos"
+      },
+      "id": "ID",
+      "nome": "Nome",
+      "assunto": "Assunto",
+      "disciplinas": "Disciplinas"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="termos">
+      <h2 data-cy="termosDetailsHeading"><span appTranslate="gmfApp.termos.detail.title">Termos</span></h2>
+
+      <hr />
+
+      <app-alert-error></app-alert-error>
+
+      <app-alert></app-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span appTranslate="global.field.id">Código</span></dt>
+        <dd>
+          <span>{{ termos.id }}</span>
+        </dd>
+        <dt><span appTranslate="gmfApp.termos.nome">Nome</span></dt>
+        <dd>
+          <span appTranslate="{{ 'gmfApp.NumeroTermo.' + termos.nome }}">{{ termos.nome }}</span>
+        </dd>
+        <dt><span appTranslate="gmfApp.termos.semestre">Semestre</span></dt>
+        <dd>
+          <span appTranslate="{{ 'gmfApp.NumeroSemestre.' + termos.semestre }}">{{ termos.semestre }}</span>
+        </dd>
+        <dt><span appTranslate="gmfApp.termos.ano">Ano</span></dt>
+        <dd>
+          <span>{{ termos.ano }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span appTranslate="entity.action.back">Voltar</span>
+      </button>
+
+      <button type="button" [routerLink]="['/termos', termos.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span appTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>

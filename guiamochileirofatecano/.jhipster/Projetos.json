@@ -1,0 +1,33 @@
+{
+  "applications": ["gmf"],
+  "changelogDate": "20240822125649",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "projetos",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "assunto",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Projetos",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "disciplinas",
+      "otherEntityRelationshipName": "projetos",
+      "relationshipName": "disciplinas",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

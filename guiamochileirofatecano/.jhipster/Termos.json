@@ -1,0 +1,40 @@
+{
+  "applications": ["gmf"],
+  "changelogDate": "20240822125349",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "termos",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "NumeroTermo",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PRIMEIRO,SEGUNDO,TERCEIRO,QUARTO,QUINTO,SEXTO"
+    },
+    {
+      "fieldName": "semestre",
+      "fieldType": "NumeroSemestre",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PRIMEIRO,SEGUNDO"
+    },
+    {
+      "fieldName": "ano",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Termos",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "disciplinas",
+      "otherEntityRelationshipName": "termos",
+      "relationshipName": "disciplinas",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

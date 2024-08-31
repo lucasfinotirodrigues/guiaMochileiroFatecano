@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" id="nav-bar">
+  <div class="container-fluid">
+      <img routerLink="/home" class="logo" src="../../../content/images/logo.svg" alt="logo" style="cursor: pointer;">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <img src="../../../content/images/menu.svg" alt="icon">
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav ms-auto">
+        </ul>
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
+          <!--<li class="d-flex align-items-center nav-item" routerLink="/home">
+            <img class="icon" src="../../../content/images/home.svg" alt="icon">
+            <a class="nav-link active" aria-current="page">Home</a>
+          </li>-->
+          <li class="d-flex align-items-center nav-item" routerLink="termos" routerLinkActive="active">
+            <img class="icon" src="../../../content/images/monitor.svg" alt="icon">
+            <a class="nav-link active" aria-current="page">Termos</a>
+          </li>
+          <li class="d-flex align-items-center nav-item" routerLink="disciplinas" routerLinkActive="active">
+            <img class="icon" src="../../../content/images/book.svg" alt="icon">
+            <a class="nav-link active" aria-current="page">Disciplinas</a>
+          </li>
+          <li class="d-flex align-items-center nav-item" routerLink="projetos" routerLinkActive="active">
+            <img class="icon" src="../../../content/images/code.svg" alt="icon">
+            <a class="nav-link active" aria-current="page">Projetos</a>
+          </li>
+          <li class="d-flex align-items-center nav-item" routerLink="resumos" routerLinkActive="active">
+            <img class="icon" src="../../../content/images/clipboard.svg" alt="icon">
+            <a class="nav-link active" aria-current="page">Resumos</a>
+          </li>
+          <li class="d-flex align-items-center nav-item" routerLink="termos/valores">
+            <img class="icon" src="../../../content/images/star.svg" alt="icon">
+            <a class="nav-link active" aria-current="page">Valores</a>
+          </li>
+          <li class="d-flex align-items-center nav-item" (click)="logout()" id="logout" data-cy="logout">
+            <img class="icon" src="../../../content/images/log-in.svg" alt="icon">
+            <a class="nav-link active" aria-current="page">Sair</a>
+          </li>
+        </ul>
+      </div>
+  </div>
+</nav>

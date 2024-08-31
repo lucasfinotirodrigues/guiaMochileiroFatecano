@@ -1,0 +1,44 @@
+<div class="content-login d-flex align-items-center justify-content-center" style="height: 92vh;  gap: 40px">
+  <img class="img-left" src="../../content/images/background2.svg" alt="icone">
+  <div class="rigth">
+    <form  class="d-flex align-items-center flex-column gap-4" role="form" (ngSubmit)="login()" [formGroup]="loginForm">
+      <img class="logo" src="../../content/images/Login.svg" alt="logo">
+      <h2>Guia do Mochileiro<br> Fatecano</h2>
+      <div class="form-group d-flex flex-column gap-2">
+        <label for="username">Nome</label>
+        <input 
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Insira seu usuário"
+          formControlName="username"
+          #username
+          data-cy="username"
+          >
+      </div>
+      <div class="form-groups d-flex flex-column gap-2">
+        <label for="password">Senha</label>
+        <img 
+          class="image" 
+          [src]="mostrarSenha ?  '../../content/images/unlock.svg' : '../../content/images/Lock.svg' " 
+          (click)="visibilidadeSenha()"  
+          alt="icone"
+          >
+        <input 
+          class="pass" 
+          [type]="mostrarSenha ? 'text' : 'password'"
+          name="password"
+          id="password"
+          placeholder="Insira sua senha"
+          formControlName="password"
+          data-cy="password"
+          >
+      </div>
+      <button type="submit" >Entrar</button>
+      <div class="d-flex gap-2">
+        <span class="gray">Ainda não possui conta?</span>
+        <span class="green" routerLink="/account/register">Cadastre-se</span>
+      </div>
+    </form>
+  </div>
+</div>

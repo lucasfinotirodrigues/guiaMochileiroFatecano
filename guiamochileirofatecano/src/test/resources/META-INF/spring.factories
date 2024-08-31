@@ -1,0 +1,1 @@
+org.springframework.test.context.ContextCustomizerFactory = br.org.ciag.gmf.config.TestContainersSpringContextCustomizerFactory
