@@ -38,7 +38,7 @@
           </button>
         </div>
       </div>
-        <h2 class="text-card" [routerLink]="['/resumos', resumo.id, 'view']">{{resumo.assunto}}</h2>
+        <h2 class="text-card" (click)="openDetail(resumo)">{{resumo.assunto}}</h2>
     </div>
-  </div>
+  </div> 
 </div>
