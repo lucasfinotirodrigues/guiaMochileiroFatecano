@@ -57,10 +57,10 @@ export class DisciplinasComponent implements OnInit {
       });
   }
 
-  openDetail(disciplina: IDisciplinas): void {
+  openDetail(disciplinaSelcionada: any): void {
     const modalRef = this.modalService.open(DisciplinasDetailComponent, { size: 'md', backdrop: 'static' })
-    modalRef.componentInstance.disciplina = disciplina;
-    console.warn("Enviando => ",disciplina)
+    modalRef.componentInstance.disciplinaSelcionada = disciplinaSelcionada;
+    console.warn("Enviando => ",disciplinaSelcionada)
   }
 
   load(): void {

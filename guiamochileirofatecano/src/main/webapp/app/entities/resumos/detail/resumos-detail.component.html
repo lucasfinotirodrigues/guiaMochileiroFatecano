@@ -1,46 +1,14 @@
-<div class="d-flex justify-content-center">
-  <div class="col-8">
-    <div *ngIf="resumos">
-      <h2 data-cy="resumosDetailsHeading"><span appTranslate="gmfApp.resumos.detail.title">Resumos</span></h2>
-
-      <hr />
-
-      <app-alert-error></app-alert-error>
-
-      <app-alert></app-alert>
-
-      <dl class="row-md jh-entity-details">
-        <dt><span appTranslate="global.field.id">Código</span></dt>
-        <dd>
-          <span>{{ resumos.id }}</span>
-        </dd>
-        <dt><span appTranslate="gmfApp.resumos.assunto">Assunto</span></dt>
-        <dd>
-          <span>{{ resumos.assunto }}</span>
-        </dd>
-        <dt><span appTranslate="gmfApp.resumos.resumo">Resumo</span></dt>
-        <dd>
-          <span>{{ resumos.resumo }}</span>
-        </dd>
-        <dt><span appTranslate="gmfApp.resumos.createdDate">Created Date</span></dt>
-        <dd>
-          <span>{{ resumos.createdDate | formatMediumDatetime }}</span>
-        </dd>
-        <dt><span appTranslate="gmfApp.resumos.disciplinas">Disciplinas</span></dt>
-        <dd>
-          <div *ngIf="resumos.disciplinas">
-            <a [routerLink]="['/disciplinas', resumos.disciplinas.id, 'view']">{{ resumos.disciplinas.id }}</a>
-          </div>
-        </dd>
-      </dl>
-
-      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
-        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span appTranslate="entity.action.back">Voltar</span>
-      </button>
-
-      <button type="button" [routerLink]="['/resumos', resumos.id, 'edit']" class="btn btn-primary">
-        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span appTranslate="entity.action.edit">Editar</span>
-      </button>
+<div class="content-modal d-flex flex-column gap-5" *ngIf="resumoSelecionado">
+  <div class="d-flex justify-content-between align-items-center">
+    <h3>{{ resumoSelecionado.assunto }}</h3>
+    <img src="../../content/images/x.svg" alt="icon" (click)="close()">
+  </div>
+  <div class="d-flex justify-content-between align-items-center">
+    <h4>Copiar resumo</h4>
+    <div class="cards" (click)="copyContent()">
+      <img src="../../content/images/copy.svg" alt="icon">
     </div>
   </div>
+    <p *ngIf="confirmationMessage" class="alert alert-secondary">{{confirmationMessage}}</p>
+  <h2>{{ resumoSelecionado.resumo }}</h2>
 </div>

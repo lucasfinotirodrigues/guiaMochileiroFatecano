@@ -1,124 +1,45 @@
-<div>
-  <h2 id="page-heading" data-cy="ProjetosHeading">
-    <span appTranslate="gmfApp.projetos.home.title">Projetos</span>
-
-    <div class="d-flex justify-content-end">
-      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
-        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
-        <span appTranslate="gmfApp.projetos.home.refreshListLabel">Atualizar lista</span>
-      </button>
-
-      <button
-        id="jh-create-entity"
-        data-cy="entityCreateButton"
-        class="btn btn-primary jh-create-entity create-projetos"
-        [routerLink]="['/projetos/new']"
+<div class="content-termos">
+  <div class="d-flex flex-wrap justify-content-between gap-3 mb-4">
+    <div class="d-flex flex-column gap-2">
+      <h2 class="titulo">Projetos</h2>
+      <h3 class="subtitulo">Qual projeto você gostaria de acessar hoje?</h3>
+    </div>
+    <button 
+      class="adicionar d-flex align-items-center justify-content-between mb-5 gap-4"
+      [routerLink]="['/disciplinas/new']"
       >
-        <fa-icon icon="plus"></fa-icon>
-        <span appTranslate="gmfApp.projetos.home.createLabel"> Criar novo Projetos </span>
-      </button>
-    </div>
-  </h2>
-
-  <app-alert-error></app-alert-error>
-
-  <app-alert></app-alert>
-
-  <div class="alert alert-warning" id="no-result" *ngIf="projetos?.length === 0">
-    <span appTranslate="gmfApp.projetos.home.notFound">Nenhum Projetos encontrado</span>
+      <img src="../../../../content/images/move.svg" alt="icone">
+      <span>Adicionar Projeto</span>
+    </button>
   </div>
-
-  <div class="table-responsive table-entities" id="entities" *ngIf="projetos && projetos.length > 0">
-    <table class="table table-striped" aria-describedby="page-heading">
-      <thead>
-        <tr appSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
-          <th scope="col" appSortBy="id">
-            <div class="d-flex">
-              <span appTranslate="global.field.id">Código</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" appSortBy="nome">
-            <div class="d-flex">
-              <span appTranslate="gmfApp.projetos.nome">Nome</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" appSortBy="assunto">
-            <div class="d-flex">
-              <span appTranslate="gmfApp.projetos.assunto">Assunto</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col" appSortBy="disciplinas.id">
-            <div class="d-flex">
-              <span appTranslate="gmfApp.projetos.disciplinas">Disciplinas</span>
-              <fa-icon class="p-1" icon="sort"></fa-icon>
-            </div>
-          </th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let projetos of projetos; trackBy: trackId" data-cy="entityTable">
-          <td>
-            <a [routerLink]="['/projetos', projetos.id, 'view']">{{ projetos.id }}</a>
-          </td>
-          <td>{{ projetos.nome }}</td>
-          <td>{{ projetos.assunto }}</td>
-          <td>
-            <div *ngIf="projetos.disciplinas">
-              <a [routerLink]="['/disciplinas', projetos.disciplinas.id, 'view']">{{ projetos.disciplinas.id }}</a>
-            </div>
-          </td>
-          <td class="text-end">
-            <div class="btn-group">
-              <button
-                type="submit"
-                [routerLink]="['/projetos', projetos.id, 'view']"
-                class="btn btn-info btn-sm"
-                data-cy="entityDetailsButton"
-              >
-                <fa-icon icon="eye"></fa-icon>
-                <span class="d-none d-md-inline" appTranslate="entity.action.view">Visualizar</span>
-              </button>
-
-              <button
-                type="submit"
-                [routerLink]="['/projetos', projetos.id, 'edit']"
-                class="btn btn-primary btn-sm"
-                data-cy="entityEditButton"
-              >
-                <fa-icon icon="pencil-alt"></fa-icon>
-                <span class="d-none d-md-inline" appTranslate="entity.action.edit">Editar</span>
-              </button>
-
-              <button type="submit" (click)="delete(projetos)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
-                <fa-icon icon="times"></fa-icon>
-                <span class="d-none d-md-inline" appTranslate="entity.action.delete">Excluir</span>
-              </button>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div *ngIf="projetos && projetos.length > 0">
-    <div class="d-flex justify-content-center">
-      <app-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></app-item-count>
-    </div>
-
-    <div class="d-flex justify-content-center">
-      <ngb-pagination
-        [collectionSize]="totalItems"
-        [page]="page"
-        [pageSize]="itemsPerPage"
-        [maxSize]="5"
-        [rotate]="true"
-        [boundaryLinks]="true"
-        (pageChange)="navigateToPage($event)"
-      ></ngb-pagination>
+  <div class="group-cards d-flex flex-wrap justify-content-between gap-4 mb-4">
+    <div 
+      class="card d-flex align-items-center justify-content-center" 
+      *ngFor="let projeto of projetos; track trackId"
+      >
+      <div ngbDropdown class="more">
+        <img class="cursor" src=".../../../../content/images/more-vertical.svg" alt="icon" ngbDropdownToggle>
+        <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+          <button 
+            ngbDropdownItem 
+            class="d-flex align-items-center gap-3"
+            [routerLink]="['/projetos', projeto.id, 'edit']"
+            >
+            <img class="icon-card" src=".../../../../content/images/edit.svg" alt="icon">
+            Editar
+          </button>
+          <button  
+            ngbDropdownItem 
+            class="d-flex align-items-center gap-3"
+            (click)="delete(projeto)" 
+            >
+            <img class="icon-card" src="../../../../content/images/trash.svg" alt="icon">
+            Excluir
+          </button>
+        </div>
+      </div>
+        <h2 class="text-card" [routerLink]="['/projetos', projeto.id, 'view']">{{projeto.nome}}</h2>
     </div>
   </div>
 </div>
+

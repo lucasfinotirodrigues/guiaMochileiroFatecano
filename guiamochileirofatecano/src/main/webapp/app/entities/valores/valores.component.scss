@@ -1,0 +1,42 @@
+.content-valores {
+    padding: 40px 80px;
+  }
+  
+  .group-cards {
+    .card {
+      width: 200px;
+      height: 248px;
+      margin-top: 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+  
+      .text-card {
+        color: var(--color-gray-600);
+        font-weight: 500;
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+  }
+  
+  h5 {
+    color: var(--color-secondary);
+  }
+  
+.ler {
+    cursor: pointer;
+}
+
+  @media screen and (max-width: 675px){
+    .content-valores {
+      padding: 40px 36px;
+    }
+  }
+  
+  @media screen and (max-width: 475px) {
+    .card {
+      width: 100%!important;
+    }
+  }
+  

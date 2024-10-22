@@ -11,10 +11,12 @@ import { ASC, DESC, SORT, ITEM_DELETED_EVENT, DEFAULT_SORT_DATA } from 'app/conf
 import { EntityArrayResponseType, ResumosService } from '../service/resumos.service';
 import { ResumosDeleteDialogComponent } from '../delete/resumos-delete-dialog.component';
 import { DataUtils } from 'app/core/util/data-util.service';
+import { ResumosDetailComponent } from '../detail/resumos-detail.component';
 
 @Component({
   selector: 'app-resumos',
   templateUrl: './resumos.component.html',
+  styleUrls: ['./resumos.component.scss']
 })
 export class ResumosComponent implements OnInit {
   resumos?: IResumos[];
@@ -63,6 +65,12 @@ export class ResumosComponent implements OnInit {
           this.onResponseSuccess(res);
         },
       });
+  }
+
+  openDetail(resumoSelecionado: any):void {
+    const modalRef = this.modalService.open(ResumosDetailComponent, {size: 'lg', backdrop: 'static'});
+    modalRef.componentInstance.resumoSelecionado = resumoSelecionado;
+    console.warn("Id do resumo no list => ", resumoSelecionado);
   }
 
   load(): void {
